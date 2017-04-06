@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjetArcachonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id_Course" />
+          </Key>
+          <Property Name="Id_Course" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lieu" Type="nvarchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Entreprise">
+          <Key>
+            <PropertyRef Name="Id_Entreprise" />
+          </Key>
+          <Property Name="Id_Entreprise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Adresse" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Num_Tel" Type="int" Nullable="false" />
+          <Property Name="mail" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Epreuve">
+          <Key>
+            <PropertyRef Name="Id_Epreuve" />
+          </Key>
+          <Property Name="Id_Epreuve" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Point_Depart" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="Point_Arrive" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="Heure_Depart" Type="datetime" Nullable="false" />
+          <Property Name="Heure_Arrive_theorique" Type="datetime" Nullable="false" />
+          <Property Name="idcourse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ListePenalite">
+          <Key>
+            <PropertyRef Name="Id_ListePenalite" />
+          </Key>
+          <Property Name="Id_ListePenalite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Membre">
+          <Key>
+            <PropertyRef Name="Id_Membre" />
+          </Key>
+          <Property Name="Id_Membre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prenom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="login" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Mdp" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tel" Type="int" Nullable="false" />
+          <Property Name="Poste" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Penalite">
+          <Key>
+            <PropertyRef Name="Id_Penalite" />
+          </Key>
+          <Property Name="Id_Penalite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VoilierInscrit" Type="int" Nullable="false" />
+          <Property Name="idepreuve" Type="int" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logitude" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Duree" Type="time" Precision="7" Nullable="false" />
+          <Property Name="idlistepenalite" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="Id_Personne" />
+          </Key>
+          <Property Name="Id_Personne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Prenom" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Numero_Club" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Numero_Licence" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Sexe" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="idNumeroInscription" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Date_naissance" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sponsoring">
+          <Key>
+            <PropertyRef Name="idEntreprise" />
+            <PropertyRef Name="idVoilierInscrit" />
+          </Key>
+          <Property Name="idEntreprise" Type="int" Nullable="false" />
+          <Property Name="idVoilierInscrit" Type="int" Nullable="false" />
+          <Property Name="Montant" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeDeClasse">
+          <Key>
+            <PropertyRef Name="Id_Classe" />
+          </Key>
+          <Property Name="Id_Classe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descrption" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Voilier">
+          <Key>
+            <PropertyRef Name="NumeroSerie" />
+          </Key>
+          <Property Name="NumeroSerie" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdClasse" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VoilierInscrit">
+          <Key>
+            <PropertyRef Name="Id_VoilierInscrit" />
+          </Key>
+          <Property Name="Id_VoilierInscrit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroSerie" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="NumeroInscription" Type="int" Nullable="false" />
+          <Property Name="Barreur" Type="int" Nullable="false" />
+          <Property Name="Equipier1" Type="int" Nullable="false" />
+          <Property Name="Equipier2" Type="int" Nullable="false" />
+          <Property Name="idCourse" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'ProjetArcachon.sys.database_firewall_rules' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Epreuve_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="Epreuve" Type="Self.Epreuve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id_Course" />
+            </Principal>
+            <Dependent Role="Epreuve">
+              <PropertyRef Name="idcourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Penalite_ListePenalite">
+          <End Role="ListePenalite" Type="Self.ListePenalite" Multiplicity="1" />
+          <End Role="Penalite" Type="Self.Penalite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListePenalite">
+              <PropertyRef Name="Id_ListePenalite" />
+            </Principal>
+            <Dependent Role="Penalite">
+              <PropertyRef Name="idlistepenalite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Penalite_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Penalite" Type="Self.Penalite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Penalite">
+              <PropertyRef Name="VoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsoring_Entreprise">
+          <End Role="Entreprise" Type="Self.Entreprise" Multiplicity="1" />
+          <End Role="Sponsoring" Type="Self.Sponsoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entreprise">
+              <PropertyRef Name="Id_Entreprise" />
+            </Principal>
+            <Dependent Role="Sponsoring">
+              <PropertyRef Name="idEntreprise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsoring_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Sponsoring" Type="Self.Sponsoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Sponsoring">
+              <PropertyRef Name="idVoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Voilier_TypeDeClasse">
+          <End Role="TypeDeClasse" Type="Self.TypeDeClasse" Multiplicity="1" />
+          <End Role="Voilier" Type="Self.Voilier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeDeClasse">
+              <PropertyRef Name="Id_Classe" />
+            </Principal>
+            <Dependent Role="Voilier">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Barreur">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Barreur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id_Course" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="idCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Equipier1">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Equipier1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Equipier2">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Equipier2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Voilier">
+          <End Role="Voilier" Type="Self.Voilier" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voilier">
+              <PropertyRef Name="NumeroSerie" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="NumeroSerie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjetArcachonModelStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entreprise" EntityType="Self.Entreprise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Epreuve" EntityType="Self.Epreuve" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListePenalite" EntityType="Self.ListePenalite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Membre" EntityType="Self.Membre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Penalite" EntityType="Self.Penalite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsoring" EntityType="Self.Sponsoring" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeDeClasse" EntityType="Self.TypeDeClasse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Voilier" EntityType="Self.Voilier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VoilierInscrit" EntityType="Self.VoilierInscrit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Epreuve_Course" Association="Self.FK_Epreuve_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Epreuve" EntitySet="Epreuve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Penalite_ListePenalite" Association="Self.FK_Penalite_ListePenalite">
+            <End Role="ListePenalite" EntitySet="ListePenalite" />
+            <End Role="Penalite" EntitySet="Penalite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Penalite_VoilierInscrit" Association="Self.FK_Penalite_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Penalite" EntitySet="Penalite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsoring_Entreprise" Association="Self.FK_Sponsoring_Entreprise">
+            <End Role="Entreprise" EntitySet="Entreprise" />
+            <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsoring_VoilierInscrit" Association="Self.FK_Sponsoring_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Voilier_TypeDeClasse" Association="Self.FK_Voilier_TypeDeClasse">
+            <End Role="TypeDeClasse" EntitySet="TypeDeClasse" />
+            <End Role="Voilier" EntitySet="Voilier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Barreur" Association="Self.FK_VoilierInscrit_Barreur">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Course" Association="Self.FK_VoilierInscrit_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Equipier1" Association="Self.FK_VoilierInscrit_Equipier1">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Equipier2" Association="Self.FK_VoilierInscrit_Equipier2">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Voilier" Association="Self.FK_VoilierInscrit_Voilier">
+            <End Role="Voilier" EntitySet="Voilier" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjetArcachonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="Id_Course" />
+          </Key>
+          <Property Name="Id_Course" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lieu" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Epreuve" Relationship="Self.FK_Epreuve_Course" FromRole="Course" ToRole="Epreuve" />
+          <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_VoilierInscrit_Course" FromRole="Course" ToRole="VoilierInscrit" />
+        </EntityType>
+        <EntityType Name="Entreprise">
+          <Key>
+            <PropertyRef Name="Id_Entreprise" />
+          </Key>
+          <Property Name="Id_Entreprise" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Num_Tel" Type="Int32" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Sponsoring" Relationship="Self.FK_Sponsoring_Entreprise" FromRole="Entreprise" ToRole="Sponsoring" />
+        </EntityType>
+        <EntityType Name="Epreuve">
+          <Key>
+            <PropertyRef Name="Id_Epreuve" />
+          </Key>
+          <Property Name="Id_Epreuve" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Point_Depart" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Point_Arrive" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Heure_Depart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Heure_Arrive_theorique" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idcourse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_Epreuve_Course" FromRole="Epreuve" ToRole="Course" />
+        </EntityType>
+        <EntityType Name="ListePenalite">
+          <Key>
+            <PropertyRef Name="Id_ListePenalite" />
+          </Key>
+          <Property Name="Id_ListePenalite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Penalite" Relationship="Self.FK_Penalite_ListePenalite" FromRole="ListePenalite" ToRole="Penalite" />
+        </EntityType>
+        <EntityType Name="Membre">
+          <Key>
+            <PropertyRef Name="Id_Membre" />
+          </Key>
+          <Property Name="Id_Membre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mdp" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tel" Type="Int32" Nullable="false" />
+          <Property Name="Poste" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Penalite">
+          <Key>
+            <PropertyRef Name="Id_Penalite" />
+          </Key>
+          <Property Name="Id_Penalite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VoilierInscrit" Type="Int32" Nullable="false" />
+          <Property Name="idepreuve" Type="Int32" Nullable="false" />
+          <Property Name="Latitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Logitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Duree" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="idlistepenalite" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ListePenalite" Relationship="Self.FK_Penalite_ListePenalite" FromRole="Penalite" ToRole="ListePenalite" />
+          <NavigationProperty Name="VoilierInscrit1" Relationship="Self.FK_Penalite_VoilierInscrit" FromRole="Penalite" ToRole="VoilierInscrit" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="Id_Personne" />
+          </Key>
+          <Property Name="Id_Personne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Numero_Club" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Numero_Licence" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Sexe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="idNumeroInscription" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Date_naissance" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_VoilierInscrit_Barreur" FromRole="Personne" ToRole="VoilierInscrit" />
+          <NavigationProperty Name="VoilierInscrit1" Relationship="Self.FK_VoilierInscrit_Equipier1" FromRole="Personne" ToRole="VoilierInscrit" />
+          <NavigationProperty Name="VoilierInscrit2" Relationship="Self.FK_VoilierInscrit_Equipier2" FromRole="Personne" ToRole="VoilierInscrit" />
+        </EntityType>
+        <EntityType Name="Sponsoring">
+          <Key>
+            <PropertyRef Name="idEntreprise" />
+            <PropertyRef Name="idVoilierInscrit" />
+          </Key>
+          <Property Name="idEntreprise" Type="Int32" Nullable="false" />
+          <Property Name="idVoilierInscrit" Type="Int32" Nullable="false" />
+          <Property Name="Montant" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Entreprise" Relationship="Self.FK_Sponsoring_Entreprise" FromRole="Sponsoring" ToRole="Entreprise" />
+          <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_Sponsoring_VoilierInscrit" FromRole="Sponsoring" ToRole="VoilierInscrit" />
+        </EntityType>
+        <EntityType Name="TypeDeClasse">
+          <Key>
+            <PropertyRef Name="Id_Classe" />
+          </Key>
+          <Property Name="Id_Classe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descrption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Voilier" Relationship="Self.FK_Voilier_TypeDeClasse" FromRole="TypeDeClasse" ToRole="Voilier" />
+        </EntityType>
+        <EntityType Name="Voilier">
+          <Key>
+            <PropertyRef Name="NumeroSerie" />
+          </Key>
+          <Property Name="NumeroSerie" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdClasse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TypeDeClasse" Relationship="Self.FK_Voilier_TypeDeClasse" FromRole="Voilier" ToRole="TypeDeClasse" />
+          <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_VoilierInscrit_Voilier" FromRole="Voilier" ToRole="VoilierInscrit" />
+        </EntityType>
+        <EntityType Name="VoilierInscrit">
+          <Key>
+            <PropertyRef Name="Id_VoilierInscrit" />
+          </Key>
+          <Property Name="Id_VoilierInscrit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroSerie" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NumeroInscription" Type="Int32" Nullable="false" />
+          <Property Name="Barreur" Type="Int32" Nullable="false" />
+          <Property Name="Equipier1" Type="Int32" Nullable="false" />
+          <Property Name="Equipier2" Type="Int32" Nullable="false" />
+          <Property Name="idCourse" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Course" Relationship="Self.FK_VoilierInscrit_Course" FromRole="VoilierInscrit" ToRole="Course" />
+          <NavigationProperty Name="Penalite" Relationship="Self.FK_Penalite_VoilierInscrit" FromRole="VoilierInscrit" ToRole="Penalite" />
+          <NavigationProperty Name="Personne" Relationship="Self.FK_VoilierInscrit_Barreur" FromRole="VoilierInscrit" ToRole="Personne" />
+          <NavigationProperty Name="Personne1" Relationship="Self.FK_VoilierInscrit_Equipier1" FromRole="VoilierInscrit" ToRole="Personne" />
+          <NavigationProperty Name="Personne2" Relationship="Self.FK_VoilierInscrit_Equipier2" FromRole="VoilierInscrit" ToRole="Personne" />
+          <NavigationProperty Name="Sponsoring" Relationship="Self.FK_Sponsoring_VoilierInscrit" FromRole="VoilierInscrit" ToRole="Sponsoring" />
+          <NavigationProperty Name="Voilier" Relationship="Self.FK_VoilierInscrit_Voilier" FromRole="VoilierInscrit" ToRole="Voilier" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Epreuve_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="Epreuve" Type="Self.Epreuve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id_Course" />
+            </Principal>
+            <Dependent Role="Epreuve">
+              <PropertyRef Name="idcourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Course">
+          <End Role="Course" Type="Self.Course" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Course">
+              <PropertyRef Name="Id_Course" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="idCourse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsoring_Entreprise">
+          <End Role="Entreprise" Type="Self.Entreprise" Multiplicity="1" />
+          <End Role="Sponsoring" Type="Self.Sponsoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entreprise">
+              <PropertyRef Name="Id_Entreprise" />
+            </Principal>
+            <Dependent Role="Sponsoring">
+              <PropertyRef Name="idEntreprise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Penalite_ListePenalite">
+          <End Role="ListePenalite" Type="Self.ListePenalite" Multiplicity="1" />
+          <End Role="Penalite" Type="Self.Penalite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListePenalite">
+              <PropertyRef Name="Id_ListePenalite" />
+            </Principal>
+            <Dependent Role="Penalite">
+              <PropertyRef Name="idlistepenalite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Penalite_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Penalite" Type="Self.Penalite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Penalite">
+              <PropertyRef Name="VoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Barreur">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Barreur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Equipier1">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Equipier1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Equipier2">
+          <End Role="Personne" Type="Self.Personne" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personne">
+              <PropertyRef Name="Id_Personne" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="Equipier2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsoring_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Sponsoring" Type="Self.Sponsoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Sponsoring">
+              <PropertyRef Name="idVoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Voilier_TypeDeClasse">
+          <End Role="TypeDeClasse" Type="Self.TypeDeClasse" Multiplicity="1" />
+          <End Role="Voilier" Type="Self.Voilier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeDeClasse">
+              <PropertyRef Name="Id_Classe" />
+            </Principal>
+            <Dependent Role="Voilier">
+              <PropertyRef Name="IdClasse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VoilierInscrit_Voilier">
+          <End Role="Voilier" Type="Self.Voilier" Multiplicity="1" />
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voilier">
+              <PropertyRef Name="NumeroSerie" />
+            </Principal>
+            <Dependent Role="VoilierInscrit">
+              <PropertyRef Name="NumeroSerie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjetArcachonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Course" EntityType="Self.Course" />
+          <EntitySet Name="Entreprise" EntityType="Self.Entreprise" />
+          <EntitySet Name="Epreuve" EntityType="Self.Epreuve" />
+          <EntitySet Name="ListePenalite" EntityType="Self.ListePenalite" />
+          <EntitySet Name="Membre" EntityType="Self.Membre" />
+          <EntitySet Name="Penalite" EntityType="Self.Penalite" />
+          <EntitySet Name="Personne" EntityType="Self.Personne" />
+          <EntitySet Name="Sponsoring" EntityType="Self.Sponsoring" />
+          <EntitySet Name="TypeDeClasse" EntityType="Self.TypeDeClasse" />
+          <EntitySet Name="Voilier" EntityType="Self.Voilier" />
+          <EntitySet Name="VoilierInscrit" EntityType="Self.VoilierInscrit" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_Epreuve_Course" Association="Self.FK_Epreuve_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="Epreuve" EntitySet="Epreuve" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Course" Association="Self.FK_VoilierInscrit_Course">
+            <End Role="Course" EntitySet="Course" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsoring_Entreprise" Association="Self.FK_Sponsoring_Entreprise">
+            <End Role="Entreprise" EntitySet="Entreprise" />
+            <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Penalite_ListePenalite" Association="Self.FK_Penalite_ListePenalite">
+            <End Role="ListePenalite" EntitySet="ListePenalite" />
+            <End Role="Penalite" EntitySet="Penalite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Penalite_VoilierInscrit" Association="Self.FK_Penalite_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Penalite" EntitySet="Penalite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Barreur" Association="Self.FK_VoilierInscrit_Barreur">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Equipier1" Association="Self.FK_VoilierInscrit_Equipier1">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Equipier2" Association="Self.FK_VoilierInscrit_Equipier2">
+            <End Role="Personne" EntitySet="Personne" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsoring_VoilierInscrit" Association="Self.FK_Sponsoring_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Voilier_TypeDeClasse" Association="Self.FK_Voilier_TypeDeClasse">
+            <End Role="TypeDeClasse" EntitySet="TypeDeClasse" />
+            <End Role="Voilier" EntitySet="Voilier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VoilierInscrit_Voilier" Association="Self.FK_VoilierInscrit_Voilier">
+            <End Role="Voilier" EntitySet="Voilier" />
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjetArcachonModelStoreContainer" CdmEntityContainer="ProjetArcachonEntities">
+          <EntitySetMapping Name="Course">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="Id_Course" ColumnName="Id_Course" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Lieu" ColumnName="Lieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entreprise">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Entreprise">
+              <MappingFragment StoreEntitySet="Entreprise">
+                <ScalarProperty Name="Id_Entreprise" ColumnName="Id_Entreprise" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Num_Tel" ColumnName="Num_Tel" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Epreuve">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Epreuve">
+              <MappingFragment StoreEntitySet="Epreuve">
+                <ScalarProperty Name="Id_Epreuve" ColumnName="Id_Epreuve" />
+                <ScalarProperty Name="Point_Depart" ColumnName="Point_Depart" />
+                <ScalarProperty Name="Point_Arrive" ColumnName="Point_Arrive" />
+                <ScalarProperty Name="Heure_Depart" ColumnName="Heure_Depart" />
+                <ScalarProperty Name="Heure_Arrive_theorique" ColumnName="Heure_Arrive_theorique" />
+                <ScalarProperty Name="idcourse" ColumnName="idcourse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListePenalite">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.ListePenalite">
+              <MappingFragment StoreEntitySet="ListePenalite">
+                <ScalarProperty Name="Id_ListePenalite" ColumnName="Id_ListePenalite" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Membre">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Membre">
+              <MappingFragment StoreEntitySet="Membre">
+                <ScalarProperty Name="Id_Membre" ColumnName="Id_Membre" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="Mdp" ColumnName="Mdp" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Poste" ColumnName="Poste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Penalite">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Penalite">
+              <MappingFragment StoreEntitySet="Penalite">
+                <ScalarProperty Name="Id_Penalite" ColumnName="Id_Penalite" />
+                <ScalarProperty Name="VoilierInscrit" ColumnName="VoilierInscrit" />
+                <ScalarProperty Name="idepreuve" ColumnName="idepreuve" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Logitude" ColumnName="Logitude" />
+                <ScalarProperty Name="Duree" ColumnName="Duree" />
+                <ScalarProperty Name="idlistepenalite" ColumnName="idlistepenalite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personne">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Personne">
+              <MappingFragment StoreEntitySet="Personne">
+                <ScalarProperty Name="Id_Personne" ColumnName="Id_Personne" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="Numero_Club" ColumnName="Numero_Club" />
+                <ScalarProperty Name="Numero_Licence" ColumnName="Numero_Licence" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="idNumeroInscription" ColumnName="idNumeroInscription" />
+                <ScalarProperty Name="Date_naissance" ColumnName="Date_naissance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsoring">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Sponsoring">
+              <MappingFragment StoreEntitySet="Sponsoring">
+                <ScalarProperty Name="idEntreprise" ColumnName="idEntreprise" />
+                <ScalarProperty Name="idVoilierInscrit" ColumnName="idVoilierInscrit" />
+                <ScalarProperty Name="Montant" ColumnName="Montant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeDeClasse">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.TypeDeClasse">
+              <MappingFragment StoreEntitySet="TypeDeClasse">
+                <ScalarProperty Name="Id_Classe" ColumnName="Id_Classe" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Descrption" ColumnName="Descrption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Voilier">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Voilier">
+              <MappingFragment StoreEntitySet="Voilier">
+                <ScalarProperty Name="NumeroSerie" ColumnName="NumeroSerie" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="IdClasse" ColumnName="IdClasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VoilierInscrit">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.VoilierInscrit">
+              <MappingFragment StoreEntitySet="VoilierInscrit">
+                <ScalarProperty Name="Id_VoilierInscrit" ColumnName="Id_VoilierInscrit" />
+                <ScalarProperty Name="NumeroSerie" ColumnName="NumeroSerie" />
+                <ScalarProperty Name="NumeroInscription" ColumnName="NumeroInscription" />
+                <ScalarProperty Name="Barreur" ColumnName="Barreur" />
+                <ScalarProperty Name="Equipier1" ColumnName="Equipier1" />
+                <ScalarProperty Name="Equipier2" ColumnName="Equipier2" />
+                <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

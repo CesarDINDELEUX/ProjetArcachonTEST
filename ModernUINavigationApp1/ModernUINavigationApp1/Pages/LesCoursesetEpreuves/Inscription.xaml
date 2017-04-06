@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.Inscription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d"  Height="506.601" Width="707.08" Background="White">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer Margin="10,10,-24.8,0.4" Background="#FFFFD6D6">
+            <StackPanel MinWidth="200">
+                <TextBlock Text="Inscrire un voilier" Style="{StaticResource Heading2}" />
+            </StackPanel>
+        </ScrollViewer>
+        <Label x:Name="LabelBateau" Content="Choix du bateau :" Margin="71,55,506.2,386.4"/>
+        <ComboBox x:Name="ComboBoxListeBateau" Margin="183,55,337.2,381.4"/>
+        <Label x:Name="LabelClasseBateau" Content="Classe du bateau :" Margin="347,55,227.2,386.4"/>
+        <ComboBox x:Name="TextBoxClasseBateau" Margin="461,55,17.2,381.4"/>
+        <Label x:Name="LabelBarreur" Content="Barreur :" Margin="29,102,573.2,340.4"/>
+        <TextBox x:Name="TextBoxNomBarreur" Text="Nom" Margin="107,102,474.2,340.4" GotFocus="TextBoxNomBarreur_GotFocus"/>
+        <TextBox x:Name="TextBoxPrenomBarreur" Text="Prénom" Margin="226,102,355.2,340.4" GotFocus="TextBoxPrenomBarreur_GotFocus"/>
+        <TextBox x:Name="TextBoxLicenceBarreur" Text="N° Licence" Margin="347,102,234.2,340.4" GotFocus="TextBoxLicenceBarreur_GotFocus"/>
+        <TextBox x:Name="TextBoxClubBarreur" Text="N° Club" Margin="475,102,106.2,340.4" GotFocus="TextBoxClubBarreur_GotFocus"/>
+        <TextBox x:Name="TextBoxSexeBarreur" Text="Sexe H/F" Margin="107,127,474.2,315.4" GotFocus="TextBoxSexeBarreur_GotFocus"/>
+        <TextBox x:Name="TextBoxNeeBarreur" Text="Né(e) le" Margin="226,127,355.2,315.4" GotFocus="TextBoxNeeBarreur_GotFocus"/>
+        <Label x:Name="Label" Content="Equipier 1 :" Margin="29,161,584.2,278.4"/>
+        <TextBox x:Name="TextBoxNomEquipier1" Text="Nom" Margin="107,158,474.2,284.4" GotFocus="TextBoxNomEquipier1_GotFocus"/>
+        <TextBox x:Name="TextBoxPrenomEquipier1" Text="Prénom" Margin="226,158,355.2,284.4" GotFocus="TextBoxPrenomEquipier1_GotFocus"/>
+        <TextBox x:Name="TextBoxLicenceEquipier1" Text="N° Licence" Margin="347,158,234.2,284.4" GotFocus="TextBoxLicenceEquipier1_GotFocus"/>
+        <TextBox x:Name="TextBoxClubEquipier1" Text="N° CLub" Margin="475,158,106.2,284.4" GotFocus="TextBoxClubEquipier1_GotFocus"/>
+        <TextBox x:Name="TextBoxSexeEquipier1" Text="Sexe H/F" Margin="107,183,474.2,259.4" GotFocus="TextBoxSexeEquipier1_GotFocus"/>
+        <TextBox x:Name="TextBoxNeeEquipier1" Text="Né(e) le" Margin="226,183,355.2,259.4" GotFocus="TextBoxNeeEquipier1_GotFocus"/>
+        <Label x:Name="LabelEquipier2" Content="Equipier 2 :" Margin="28,211,584.2,231.4"/>
+        <TextBox x:Name="TextBoxNomEquipier2" Text="Nom" Margin="107,211,474.2,231.4" GotFocus="TextBoxNomEquipier2_GotFocus"/>
+        <TextBox x:Name="TextBoxPrenomEquipier2" Text="Prenom" Margin="226,211,355.2,231.4" GotFocus="TextBoxPrenomEquipier2_GotFocus"/>
+        <TextBox x:Name="TextBoxLicenceEquipier2" Text="N° Licence" Margin="347,211,234.2,231.4" GotFocus="TextBoxLicenceEquipier2_GotFocus"/>
+        <TextBox x:Name="TextBoxClubEquipier2" Text="N° Club" Margin="475,211,106.2,231.4" GotFocus="TextBoxClubEquipier2_GotFocus"/>
+        <TextBox x:Name="TextBoxSexeEquipier2" Text="Sexe H/F" Margin="107,236,474.2,206.4" GotFocus="TextBoxSexeEquipier2_GotFocus"/>
+        <TextBox x:Name="TextBoxNeeEquipier2" Text="Né(e) le :" Margin="226,236,355.2,206.4" GotFocus="TextBoxNeeEquipier2_GotFocus"/>
+
+        <Label x:Name="LabelChoixCourse" Content="Choix de la course :" Margin="71,320,497.2,123.4"/>
+        <ComboBox x:Name="ComboBoxListeCourse" Margin="183,320,331.2,123.4" Height="auto"/>
+        <Label x:Name="LabelDateDebut" Content="Date de début :" Margin="94,344,497.2,97.4"/>
+        <TextBox x:Name="TextBoxDateDebut" Margin="183,344,388.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateDebut_GotFocus"/>
+        <Label x:Name="LabelDateFin" Content="Date de fin :" Margin="347,344,256.2,97.4"/>
+        <TextBox x:Name="TextBoxDateFin" Margin="461,344,120.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateFin_GotFocus"/>
+        <Label x:Name="LabelLieu" Content="Lieu :" Margin="142,370,497.2,73.4"/>
+        <TextBox x:Name="TextBoxLieu" Margin="183,370,237.2,72.4"/>
+        <Button x:Name="BoutonValiderInscription" Content="Valider" Margin="277,422,237.2,10.4"/>
+    </Grid>
+</UserControl>

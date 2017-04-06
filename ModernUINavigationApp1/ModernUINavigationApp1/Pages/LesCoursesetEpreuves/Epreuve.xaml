@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.Epreuve"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" Height="343.732" Width="560.641">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer>
+            <StackPanel MinWidth="200">
+                <TextBlock Text="Les Epreuves" Style="{StaticResource Heading2}" />
+            </StackPanel>
+        </ScrollViewer>
+        <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Height="175" Margin="10,57,9.8,68">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom de l'épreuve"/>
+                    <GridViewColumn Header="Point de départ"/>
+                    <GridViewColumn Header="Point d'arriver"/>
+                    <GridViewColumn Header="Heure de départ"/>
+                    <GridViewColumn Header="Heure d'arriver théorique"/>
+                    <GridViewColumn Header="Nom de la course"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

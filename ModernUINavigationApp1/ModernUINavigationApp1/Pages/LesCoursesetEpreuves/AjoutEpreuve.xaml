@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.AjoutEpreuve"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" Height="364.299" Width="455.639">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer Margin="10,0,-10.4,0">
+            <StackPanel MinWidth="200">
+                <TextBlock Text="Ajout d'épreuve" Style="{StaticResource Heading2}" />
+            </StackPanel>
+        </ScrollViewer>
+        <Label x:Name="LabelPointdeDepart" Content="Point de départ :" Margin="24,38,300,260"/>
+        <TextBox x:Name="TexdBoxPointDepart" Margin="150,38,126,260"/>
+        <Label x:Name="LabelPointArrive" Content="Point d'arrivé :" Margin="24,62,313,236"/>
+        <TextBox x:Name="TextBoxPointArrive" Margin="150,62,126,236"/>
+        <Label x:Name="LabelHeureDepart" Content="Heure de départ :" Margin="24,106,287,192"/>
+        <TextBox x:Name="TextBoxHeureDepart" Margin="155,106,126,192"/>
+        <Label x:Name="LabelHeureArriveTheo" Content="Heure d'arrivée théorique :" Margin="24,147,247,151"/>
+        <TextBox x:Name="TextBoxHeureArriveTheo" Margin="192,147,99,151"/>
+        <Label x:Name="LabelCourse" Content="Choix de la course :" Margin="25,188,287,109"/>
+        <ComboBox x:Name="ComboBoxChoixCourse" Margin="152,188,126,109" DisplayMemberPath="Nom"/>
+        <Button x:Name="ButtonValider" Content="Valider" Margin="135,285,146,10" Click="ButtonValider_Click"/>
+    </Grid>
+</UserControl>
