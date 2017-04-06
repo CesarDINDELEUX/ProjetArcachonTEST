@@ -13,7 +13,7 @@
         </ScrollViewer>
         <Label x:Name="LabelNomEntreprise" Content="Nom de l'entreprise :" Margin="44,103,456,406.2"/>
         <Label x:Name="LabelChoixBateau" Content="Choix du bateau à sponsoriser :" Margin="44,193,394,312.2"/>
-        <TextBox x:Name="TextBoxNomEntreprise" Margin="185,103,246,406.2" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox x:Name="TextBoxNomEntreprise" Margin="294,103,137,406.2" RenderTransformOrigin="0.5,0.5"/>
         <ComboBox x:Name="ComboBoxChoixBateau" Margin="294,193,149,301.2"/>
         <Button x:Name="ButtonValider" Content="Valider" Margin="239,348,246,153.2"/>
     </Grid>

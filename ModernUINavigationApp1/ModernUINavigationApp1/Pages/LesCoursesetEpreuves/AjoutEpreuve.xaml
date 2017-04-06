@@ -20,7 +20,7 @@
         <Label x:Name="LabelHeureArriveTheo" Content="Heure d'arrivée théorique :" Margin="24,147,247,151"/>
         <TextBox x:Name="TextBoxHeureArriveTheo" Margin="192,147,99,151"/>
         <Label x:Name="LabelCourse" Content="Choix de la course :" Margin="25,188,287,109"/>
-        <ComboBox x:Name="ComboBoxChoixCourse" Margin="152,188,126,109" DisplayMemberPath="Nom"/>
+        <ComboBox x:Name="ComboBoxChoixCourse" Margin="152,188,126,109"/>
         <Button x:Name="ButtonValider" Content="Valider" Margin="135,285,146,10" Click="ButtonValider_Click"/>
     </Grid>
 </UserControl>

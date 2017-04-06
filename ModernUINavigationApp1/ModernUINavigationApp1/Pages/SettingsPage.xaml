@@ -11,6 +11,7 @@
             <mui:ModernTab.Links>
                 <mui:Link DisplayName="Apparence" Source="/Pages/Settings/Appearance.xaml" />
                 <mui:Link DisplayName="A propos" Source="/Pages/Settings/About.xaml" />
+                <mui:Link DisplayName="AjoutEpreuve" Source="/Pages/AjoutEpreuve.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

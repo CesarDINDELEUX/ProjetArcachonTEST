@@ -24,12 +24,6 @@ namespace ModernUINavigationApp1
         public MainWindow()
         {
             InitializeComponent();
-            var window = App.Current.MainWindow as ModernWindow;
-           // window.Hide();
-            var login = new LoginWindow();
-            login.Show();
-            
-
-        }   
+        }
     }
 }

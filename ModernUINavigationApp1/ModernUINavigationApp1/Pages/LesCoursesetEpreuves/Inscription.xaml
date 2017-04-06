@@ -36,7 +36,6 @@
         <TextBox x:Name="TextBoxClubEquipier2" Text="N° Club" Margin="475,211,106.2,231.4" GotFocus="TextBoxClubEquipier2_GotFocus"/>
         <TextBox x:Name="TextBoxSexeEquipier2" Text="Sexe H/F" Margin="107,236,474.2,206.4" GotFocus="TextBoxSexeEquipier2_GotFocus"/>
         <TextBox x:Name="TextBoxNeeEquipier2" Text="Né(e) le :" Margin="226,236,355.2,206.4" GotFocus="TextBoxNeeEquipier2_GotFocus"/>
-
         <Label x:Name="LabelChoixCourse" Content="Choix de la course :" Margin="71,320,497.2,123.4"/>
         <ComboBox x:Name="ComboBoxListeCourse" Margin="183,320,331.2,123.4" Height="auto"/>
         <Label x:Name="LabelDateDebut" Content="Date de début :" Margin="94,344,497.2,97.4"/>

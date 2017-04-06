@@ -31,23 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+      <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Windows.Shell">
-      <HintPath>..\..\..\..\..\..\..\Downloads\mui-master\1.0\FirstFloor.ModernUI\Binaries\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,30 +58,54 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Login.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Pages\GestionEntreprise.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="Pages\GestionEntreprise.xaml.cs">
+      <DependentUpon>GestionEntreprise.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\Courses.xaml">
+    <Page Include="Pages\Entreprises\AjoutEntreprise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Entreprise.xaml">
+    <Page Include="Pages\LesCoursesetEpreuves\AjoutEpreuve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Inscription.xaml">
+    <Page Include="Pages\ListeVoilier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Voilier\AjoutVoilier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LesCoursesetEpreuves\Courses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Entreprises\Entreprise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LesCoursesetEpreuves\Epreuve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LesCoursesetEpreuves\Inscription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LesCourses.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,14 +113,32 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Pages\Courses.xaml.cs">
+    <Compile Include="Pages\Entreprises\AjoutEntreprise.xaml.cs">
+      <DependentUpon>AjoutEntreprise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LesCoursesetEpreuves\AjoutEpreuve.xaml.cs">
+      <DependentUpon>AjoutEpreuve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListeVoilier.xaml.cs">
+      <DependentUpon>ListeVoilier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Voilier\AjoutVoilier.xaml.cs">
+      <DependentUpon>AjoutVoilier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LesCoursesetEpreuves\Courses.xaml.cs">
       <DependentUpon>Courses.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Entreprise.xaml.cs">
+    <Compile Include="Pages\Entreprises\Entreprise.xaml.cs">
       <DependentUpon>Entreprise.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Inscription.xaml.cs">
+    <Compile Include="Pages\LesCoursesetEpreuves\Epreuve.xaml.cs">
+      <DependentUpon>Epreuve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LesCoursesetEpreuves\Inscription.xaml.cs">
       <DependentUpon>Inscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LesCourses.xaml.cs">
+      <DependentUpon>LesCourses.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
@@ -138,15 +168,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\LibArcachon\LibArcachon.csproj">
-      <Project>{73ed0797-9c96-4972-bd54-7d4ecb268ec9}</Project>
-      <Name>LibArcachon</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
