@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibArcachon", "LibArcachon\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programme de test", "Programme de test\Programme de test.csproj", "{4DB81A60-71EB-47B3-94A8-C2309A4EC416}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernUINavigationApp1", "..\..\..\2nd semestre\ProjetFlotBleu\Arcachon\ModernUINavigationApp1\ModernUINavigationApp1\ModernUINavigationApp1.csproj", "{CF13B53D-EF04-4FF4-8292-07D4289CD339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4DB81A60-71EB-47B3-94A8-C2309A4EC416}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DB81A60-71EB-47B3-94A8-C2309A4EC416}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DB81A60-71EB-47B3-94A8-C2309A4EC416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF13B53D-EF04-4FF4-8292-07D4289CD339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF13B53D-EF04-4FF4-8292-07D4289CD339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF13B53D-EF04-4FF4-8292-07D4289CD339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF13B53D-EF04-4FF4-8292-07D4289CD339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
