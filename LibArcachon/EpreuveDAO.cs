@@ -8,6 +8,17 @@ namespace LibArcachon
 {
     public class EpreuveDAO
     {
+        /// <summary>
+        /// Permet d'ajouter une epreuve
+        /// </summary>
+        /// <param name="epreuve">Course a ajouté</param>
+        /// <returns>Retourne message de confirmation</returns>
+        public static void Add(Epreuve epreuve)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            db.Epreuve.Add(epreuve);
+            db.SaveChanges();
+        }
 
         /// <summary>
         /// Supprimer une Epreuve
@@ -82,5 +93,18 @@ namespace LibArcachon
             Epreuve epreuve = db.Epreuve.Find(id);
             return epreuve;
         }
+
+        /// <summary>
+        /// Lister les epreuves d'une course
+        /// </summary>
+        /// <param name="courseid">id de la course</param>
+        /// <returns>retourne la liste des voiliers inscrit</returns>
+        public static List<Course> getEpreuvesByCourse(int courseid)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            List<Course> listEpreuveParCourse = db.Course.Where(f => f.Id_Course == courseid).ToList();
+            return listEpreuveParCourse;
+        }
+
     }
 }

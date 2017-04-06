@@ -18,9 +18,9 @@
         <ListView x:Name="ListViewCourses" Margin="50,55,29.4,88.8" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1"  Background="{x:Null}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nom de la course" Width="auto"></GridViewColumn>
-                    <GridViewColumn Header="Nombre d'épreuves" Width="auto">
-                    </GridViewColumn>
+                    <GridViewColumn Header="Nom de la course" Width="auto" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Nombre d'épreuves" Width="auto" DisplayMemberBinding="{Binding Lieu}"/>
+
                     <GridViewColumn Header="Date de début" Width="auto"></GridViewColumn>
                     <GridViewColumn Header="Date de fin" Width="Auto"></GridViewColumn>
                     <GridViewColumn Header="Gagnant de la course" Width="Auto"></GridViewColumn>
