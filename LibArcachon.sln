@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibArcachon", "LibArcachon\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programme de test", "Programme de test\Programme de test.csproj", "{4DB81A60-71EB-47B3-94A8-C2309A4EC416}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernUINavigationApp1", "..\..\..\2nd semestre\ProjetFlotBleu\Arcachon\ModernUINavigationApp1\ModernUINavigationApp1\ModernUINavigationApp1.csproj", "{CF13B53D-EF04-4FF4-8292-07D4289CD339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernUINavigationApp1", "ModernUINavigationApp1\ModernUINavigationApp1\ModernUINavigationApp1.csproj", "{CF13B53D-EF04-4FF4-8292-07D4289CD339}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
