@@ -102,6 +102,7 @@
     <Compile Include="Sponsoring.cs">
       <DependentUpon>Arcachon.tt</DependentUpon>
     </Compile>
+    <Compile Include="SponsoringDAO.cs" />
     <Compile Include="TypeDeClasse.cs">
       <DependentUpon>Arcachon.tt</DependentUpon>
     </Compile>
