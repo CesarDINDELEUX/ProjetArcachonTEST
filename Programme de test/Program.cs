@@ -11,8 +11,9 @@ namespace Programme_de_test
     {
         static void Main(string[] args)
         {
+            
+            var k2 = CourseDAO.List();
 
-            var k2 = EntrepriseDAO.ListAll();
 
         }
     }

@@ -23,11 +23,16 @@ namespace ModernUINavigationApp1.Pages
         public AjoutEpreuve()
         {
             InitializeComponent();
+            ComboBoxChoixCourse.ItemsSource = LibArcachon.CourseDAO.List();
         }
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            LibArcachon.Course lacourse = ComboBoxChoixCourse.SelectedItem as LibArcachon.Course;
+            int id_course = lacourse.Id_Course;
+            LibArcachon.Epreuve lol = new LibArcachon.Epreuve { Point_Arrive = TexdBoxPointDepart.Text, Point_Depart = TexdBoxPointDepart.Text, Heure_Arrive_theorique = DateTime.Now, Heure_Depart = DateTime.Now,idcourse = id_course };
+            LibArcachon.EpreuveDAO.Add(lol);
         }
     }
 }

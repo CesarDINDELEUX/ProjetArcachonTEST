@@ -23,8 +23,12 @@ namespace ModernUINavigationApp1.Pages
         public Courses()
         {
             InitializeComponent();
-
-
+            LibArcachon.CourseDAO.List();
+            List<LibArcachon.Course> lol = new List<LibArcachon.Course>();
+            lol = LibArcachon.CourseDAO.List();
+            ListViewCourses.ItemsSource = lol;        
+            
         }
+
     }
 }
