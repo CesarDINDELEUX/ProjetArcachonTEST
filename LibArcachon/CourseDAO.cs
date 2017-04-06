@@ -9,7 +9,7 @@ namespace LibArcachon
     public class CourseDAO
     {
         /// <summary>
-        /// Liste Toutesss les courszdqzde et renvois une liste de courses
+        /// Liste Toutessees les courszdqzde et renvois une liste de courses
         /// </summary>
         /// <returns>ListeCourse comme une List Course</returns>
         public static List<Course> List() {
