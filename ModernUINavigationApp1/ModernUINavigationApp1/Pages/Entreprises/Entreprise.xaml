@@ -19,7 +19,7 @@
                     <GridViewColumn Header="Modifier">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="ButtonModifier" Content="Edit"/>
+                                <Button x:Name="ButtonModifier" Content="Edit" Click="ButtonModifier_Click"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

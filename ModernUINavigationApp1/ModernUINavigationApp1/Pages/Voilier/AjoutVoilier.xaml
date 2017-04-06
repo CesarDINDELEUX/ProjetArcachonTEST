@@ -13,15 +13,17 @@
         </ScrollViewer>
         <Label x:Name="LabelNomVoilier" Content="Nom du voilier :" Margin="60,40,356.8,317"/>
         <TextBox x:Name="TextBoxNomVoilier" Margin="196,40,116.8,317"/>
-        <Label x:Name="LabelTypeDeVoilier" Content="Choix tu type de voilier :" Margin="60,103,317.8,256"/>
+        <Label x:Name="LabelTypeDeVoilier" Content="Choix tu type de voilier :" Margin="60,68,317.8,291"/>
         <Label x:Name="LabelChoixEntreprise" Content="Choix des entreprises sponsors :" Margin="16,161,317.8,198"/>
         <Label x:Name="LabelAjoutEntreprise" Content="Nom de l'entreprise à ajouter :" Margin="332,161,5.8,201"/>
-        <ComboBox x:Name="ComboBoxChoixDeVoilier" Margin="196,103,181.8,256"/>
-        <Button x:Name="ButtonAjoutType" Content="Ajouter" Margin="362,103,24.8,250"/>
-        <ListView BorderBrush="Black" BorderThickness="1" Margin="191,156,181.8,67" RenderTransformOrigin="0.5,0.5">
+        <ComboBox x:Name="ComboBoxChoixDeVoilier" Margin="210,68,167.8,286"/>
+        <Button x:Name="ButtonAjoutType" Content="Ajouter" Margin="362,68,24.8,286"/>
+        <Label x:Name="LabelDescription" Content="Description :" Margin="60,99,356.8,259"/>
+        <TextBox x:Name="TextBoxDescription" Margin="196,99,55.8,255"/>
+        <ListView BorderBrush="Black" BorderThickness="1" Margin="191,156,181.8,67" RenderTransformOrigin="0.5,0.5" DisplayMemberPath="{Binding Path=Entreprise}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nom de l'entreprise"></GridViewColumn>
+                    <GridViewColumn Header="Nom de l'entreprise" DisplayMemberBinding="{Binding Path=Nom}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

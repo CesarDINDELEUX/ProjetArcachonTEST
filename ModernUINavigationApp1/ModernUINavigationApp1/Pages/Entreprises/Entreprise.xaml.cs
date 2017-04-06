@@ -25,6 +25,11 @@ namespace ModernUINavigationApp1.Pages
             InitializeComponent();
         }
 
-
+        private void ButtonModifier_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            Entreprise page = new Entreprise();
+            nav.Navigate(page); 
+        }
     }
 }
