@@ -36,6 +36,5 @@ namespace LibArcachon
         public virtual DbSet<TypeDeClasse> TypeDeClasse { get; set; }
         public virtual DbSet<Voilier> Voilier { get; set; }
         public virtual DbSet<VoilierInscrit> VoilierInscrit { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
