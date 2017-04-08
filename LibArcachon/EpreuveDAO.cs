@@ -98,11 +98,11 @@ namespace LibArcachon
         /// Lister les epreuves d'une course
         /// </summary>
         /// <param name="courseid">id de la course</param>
-        /// <returns>retourne la liste des voiliers inscrit</returns>
-        public static List<Course> getEpreuvesByCourse(int courseid)
+        /// <returns>retourne la liste des épreuves d'une course</returns>
+        public static List<Epreuve> getEpreuvesByCourse(int courseid)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
-            List<Course> listEpreuveParCourse = db.Course.Where(f => f.Id_Course == courseid).ToList();
+            List<Epreuve> listEpreuveParCourse = db.Epreuve.Where(f => f.idcourse == courseid).ToList();
             return listEpreuveParCourse;
         }
 

@@ -4,15 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             mc:Ignorable="d" Height="451.146" Width="802.287" Background="#FFFCF2F2">
+             mc:Ignorable="d" Height="451.146" Width="802.287">
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <TextBlock Text="Les Epreuves" Style="{StaticResource Heading2}" />
             </StackPanel>
         </ScrollViewer>
-        <Label x:Name="LabelChoixCourse" Content="Choisir une course :" Margin="50,50,721,340"/>
-        <ComboBox x:Name="ComboBoxCourse" Margin="176,50,546,340"/>
+        <Label x:Name="LabelChoixCourse" Content="Choisir une course :" Margin="73,50,697.5,340"/>
+        <ComboBox x:Name="ComboBoxCourse" Margin="135,50,466.5,323" DisplayMemberPath="Nom" SelectionChanged="ComboBoxCourse_SelectionChanged"/>
         <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Height="175" Margin="10,111,127.4,121.2">
             <ListView.View>
                 <GridView>

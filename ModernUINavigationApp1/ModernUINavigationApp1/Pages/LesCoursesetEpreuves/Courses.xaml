@@ -19,6 +19,7 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom de la course" Width="auto" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Lieu" Width="auto" DisplayMemberBinding="{Binding Lieu}"/>
                     <GridViewColumn Header="Nombre d'épreuves" Width="auto" DisplayMemberBinding="{Binding Lieu}"/>
 
                     <GridViewColumn Header="Date de début" Width="auto"></GridViewColumn>

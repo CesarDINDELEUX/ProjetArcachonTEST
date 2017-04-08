@@ -11,8 +11,10 @@ namespace Programme_de_test
     {
         static void Main(string[] args)
         {
+
+            Course lol = new Course { Nom = "Course LR", Lieu = "La Rochelle"};
+            CourseDAO.Add(lol);
             
-            var k2 = CourseDAO.List();
 
 
         }

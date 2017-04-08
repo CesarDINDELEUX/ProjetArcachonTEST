@@ -12,15 +12,15 @@
             </StackPanel>
         </ScrollViewer>
         <Label x:Name="LabelPointdeDepart" Content="Point de départ :" Margin="24,38,300,260"/>
-        <TextBox x:Name="TexdBoxPointDepart" Margin="150,38,126,260"/>
-        <Label x:Name="LabelPointArrive" Content="Point d'arrivé :" Margin="24,62,313,236"/>
-        <TextBox x:Name="TextBoxPointArrive" Margin="150,62,126,236"/>
+        <TextBox x:Name="TexdBoxPointDepart" Margin="192,38,83.5,260.5"/>
+        <Label x:Name="LabelPointArrive" Content="Point d'arrivé :" Margin="24,72,313.5,226.5"/>
+        <TextBox x:Name="TextBoxPointArrive" Margin="192,72,83.5,226.5"/>
         <Label x:Name="LabelHeureDepart" Content="Heure de départ :" Margin="24,106,287,192"/>
-        <TextBox x:Name="TextBoxHeureDepart" Margin="155,106,126,192"/>
+        <TextBox x:Name="TextBoxHeureDepart" Margin="192,106,88.5,191.5"/>
         <Label x:Name="LabelHeureArriveTheo" Content="Heure d'arrivée théorique :" Margin="24,147,247,151"/>
-        <TextBox x:Name="TextBoxHeureArriveTheo" Margin="192,147,99,151"/>
+        <TextBox x:Name="TextBoxHeureArriveTheo" Margin="192,147,88.5,150.5"/>
         <Label x:Name="LabelCourse" Content="Choix de la course :" Margin="25,188,287,109"/>
-        <ComboBox x:Name="ComboBoxChoixCourse" Margin="152,188,126,109" DisplayMemberPath="Nom"/>
-        <Button x:Name="ButtonValider" Content="Valider" Margin="135,285,146,10" Click="ButtonValider_Click"/>
+        <ComboBox x:Name="ComboBoxChoixCourse" Margin="192,188,85.5,108.5" DisplayMemberPath="Nom"/>
+        <Button x:Name="ButtonValider" Content="Valider" Margin="135,250,145.5,44.5" Click="ButtonValider_Click"/>
     </Grid>
 </UserControl>
