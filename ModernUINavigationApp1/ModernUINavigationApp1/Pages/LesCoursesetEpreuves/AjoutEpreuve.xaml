@@ -4,23 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" Height="364.299" Width="455.639">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer Margin="10,0,-10.4,0">
+        <ScrollViewer Margin="-10,0,9.5,0.5">
             <StackPanel MinWidth="200">
                 <TextBlock Text="Ajout d'épreuve" Style="{StaticResource Heading2}" />
             </StackPanel>
         </ScrollViewer>
         <Label x:Name="LabelPointdeDepart" Content="Point de départ :" Margin="24,38,300,260"/>
-        <TextBox x:Name="TexdBoxPointDepart" Margin="192,38,83.5,260.5"/>
+        <TextBox x:Name="TexdBoxPointDepart" Margin="192,38,52.5,260.5"/>
         <Label x:Name="LabelPointArrive" Content="Point d'arrivé :" Margin="24,72,313.5,226.5"/>
-        <TextBox x:Name="TextBoxPointArrive" Margin="192,72,83.5,226.5"/>
-        <Label x:Name="LabelHeureDepart" Content="Heure de départ :" Margin="24,106,287,192"/>
-        <TextBox x:Name="TextBoxHeureDepart" Margin="192,106,88.5,191.5"/>
-        <Label x:Name="LabelHeureArriveTheo" Content="Heure d'arrivée théorique :" Margin="24,147,247,151"/>
-        <TextBox x:Name="TextBoxHeureArriveTheo" Margin="192,147,88.5,150.5"/>
+        <TextBox x:Name="TextBoxPointArrive" Margin="192,72,52.5,226.5"/>
+        <Label x:Name="LabelHeureDepart" Content="Date et heure de départ :" Margin="24,106,263.5,192.5"/>
+        <xctk:DateTimePicker x:Name="TextBoxHeureDepart" Margin="192,106,52.5,191.5"/>
+        <Label x:Name="LabelHeureArriveTheo" Content="Date et heure d'arrivée :" Margin="24,147,247,151"/>
+        <xctk:DateTimePicker x:Name="TextBoxHeureArriveTheo" Margin="192,147,52.5,150.5"/>
         <Label x:Name="LabelCourse" Content="Choix de la course :" Margin="25,188,287,109"/>
-        <ComboBox x:Name="ComboBoxChoixCourse" Margin="192,188,85.5,108.5" DisplayMemberPath="Nom"/>
+        <ComboBox x:Name="ComboBoxChoixCourse" Margin="192,188,52.5,108.5" DisplayMemberPath="Nom"/>
         <Button x:Name="ButtonValider" Content="Valider" Margin="135,250,145.5,44.5" Click="ButtonValider_Click"/>
     </Grid>
 </UserControl>

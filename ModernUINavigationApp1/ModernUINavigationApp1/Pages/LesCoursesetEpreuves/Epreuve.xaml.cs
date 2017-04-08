@@ -39,6 +39,7 @@ namespace ModernUINavigationApp1.Pages
         {
             LibArcachon.Course lol = ComboBoxCourse.SelectedItem as LibArcachon.Course; 
             List<LibArcachon.Epreuve> ListEp = LibArcachon.EpreuveDAO.getEpreuvesByCourse(lol.Id_Course);
+            ListViewEpreuve.ItemsSource = ListEp;
         }
     }
 }

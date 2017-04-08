@@ -8,7 +8,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <!-- TODO: set @SelectedSource -->
         <mui:ModernTab Layout="List">
-            <mui:ModernTab.Links>
+            <mui:ModernTab.Links >
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="Liste des Courses" Source="/Pages/LesCoursesetEpreuves/Courses.xaml" />
                 <mui:Link DisplayName="Liste des épreuves" Source="/Pages/LesCoursesetEpreuves/Epreuve.xaml" />

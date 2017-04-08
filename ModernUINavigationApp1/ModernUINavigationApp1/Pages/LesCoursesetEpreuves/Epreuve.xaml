@@ -11,19 +11,18 @@
                 <TextBlock Text="Les Epreuves" Style="{StaticResource Heading2}" />
             </StackPanel>
         </ScrollViewer>
-        <Label x:Name="LabelChoixCourse" Content="Choisir une course :" Margin="73,50,697.5,340"/>
-        <ComboBox x:Name="ComboBoxCourse" Margin="135,50,466.5,323" DisplayMemberPath="Nom" SelectionChanged="ComboBoxCourse_SelectionChanged"/>
-        <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Height="175" Margin="10,111,127.4,121.2">
+
+        <ComboBox x:Name="ComboBoxCourse" Margin="233,50,368.5,323" DisplayMemberPath="Nom" SelectionChanged="ComboBoxCourse_SelectionChanged"/>
+        <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Margin="10,111,106.5,32">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nom de l'épreuve"/>
-                    <GridViewColumn Header="Point de départ"/>
-                    <GridViewColumn Header="Point d'arriver"/>
-                    <GridViewColumn Header="Heure de départ"/>
-                    <GridViewColumn Header="Heure d'arriver théorique"/>
-                    <GridViewColumn Header="Nom de la course"/>
+                    <GridViewColumn Header="Point de départ" DisplayMemberBinding="{Binding Point_Depart}"/>
+                    <GridViewColumn Header="Point d'arriver" DisplayMemberBinding="{Binding Point_Arrive}"/>
+                    <GridViewColumn Header="Heure de départ" DisplayMemberBinding="{Binding Heure_Depart}"/>
+                    <GridViewColumn Header="Heure d'arriver théorique" DisplayMemberBinding="{Binding Heure_Arrive_theorique}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label x:Name="label" Content="Choisir la course :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="119" Margin="90,50,0,0" FontSize="15" FontStyle="Italic"/>
     </Grid>
 </UserControl>
