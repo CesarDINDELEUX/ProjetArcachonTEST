@@ -24,8 +24,7 @@ namespace ModernUINavigationApp1.Pages
         {
             InitializeComponent();
             List<LibArcachon.Course> Coursess = new List<LibArcachon.Course>();
-            Coursess = LibArcachon.CourseDAO.List();
-            Courses nullcourse = new Courses(null);
+            Coursess = LibArcachon.CourseDAO.List();          
             Coursess.Insert(0, null);
             ComboBoxCourse.ItemsSource = Coursess;
         }
