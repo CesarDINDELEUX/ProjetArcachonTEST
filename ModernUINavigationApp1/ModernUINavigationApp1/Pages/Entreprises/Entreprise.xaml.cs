@@ -23,13 +23,12 @@ namespace ModernUINavigationApp1.Pages
         public Entreprise()
         {
             InitializeComponent();
+            ListViewEntreprise.ItemsSource = LibArcachon.EntrepriseDAO.ListAll();
         }
 
         private void ButtonModifier_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService nav = NavigationService.GetNavigationService(this);
-            Entreprise page = new Entreprise();
-            nav.Navigate(page); 
+            
         }
     }
 }

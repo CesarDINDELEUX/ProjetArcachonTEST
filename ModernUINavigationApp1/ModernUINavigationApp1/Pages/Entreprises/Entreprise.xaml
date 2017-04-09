@@ -11,10 +11,13 @@
                 <TextBlock Text="Entreprises Sponsors" Style="{StaticResource Heading2}" />
             </StackPanel>
         </ScrollViewer>
-        <ListView x:Name="ListViewEntreprise" Background="{x:Null}" BorderThickness="1" BorderBrush="Black" Margin="109,98,106.5,178.4" ItemsSource="{Binding Path=Entreprise}">
+        <ListView x:Name="ListViewEntreprise" Background="{x:Null}" BorderThickness="1" BorderBrush="Black" Margin="33,121,38.5,144.4" ItemsSource="{Binding Path=Entreprise}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nom de l'entreprise" DisplayMemberBinding="{Binding Path=Nom}"/>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nom}"/>
+                    <GridViewColumn Header="Téléphone" DisplayMemberBinding="{Binding Path=Num_Tel}"/>
+                    <GridViewColumn Header="Mail" DisplayMemberBinding="{Binding Path=mail}"/>
+                    <GridViewColumn Header="Contact" DisplayMemberBinding="{Binding Path=Contact}"/>
                     <GridViewColumn Header="Bateau Sponsorisé"/>
                     <GridViewColumn Header="Modifier">
                         <GridViewColumn.CellTemplate>
