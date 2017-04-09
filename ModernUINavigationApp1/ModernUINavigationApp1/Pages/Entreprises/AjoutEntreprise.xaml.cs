@@ -23,22 +23,50 @@ namespace ModernUINavigationApp1.Pages
         public AjoutEntreprise()
         {
             InitializeComponent();
+                ButtonValider.IsEnabled = false;
+        }
 
-            ComboBoxChoixBateau.ItemsSource = LibArcachon.VoilierDAO.ListAll();
-
-            
-
+        private void EnableButton()
+        {
+            if (TextBoxAdresse.Text == "" || TextBoxContact.Text == "" || TextBoxMail.Text == "" || TextBoxNomEntreprise.Text == "" || TextBoxTelephone.Text == "")
+            {
+                ButtonValider.IsEnabled = false;
+            }
+            else
+            {
+                ButtonValider.IsEnabled = true;
+            }
         }
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
+        {       
+            LibArcachon.Entreprise entreprise = new LibArcachon.Entreprise { Nom = TextBoxNomEntreprise.Text, Adresse = TextBoxAdresse.Text, Num_Tel = int.Parse(TextBoxTelephone.Text), mail = TextBoxMail.Text, Contact = TextBoxContact.Text, };
+            LibArcachon.EntrepriseDAO.Add(entreprise);
+        }
+
+        private void TextBoxContact_TextChanged(object sender, TextChangedEventArgs e)
         {
-            LibArcachon.Entreprise ajout = new LibArcachon.Entreprise { Nom = TextBoxNomEntreprise.Text, Adresse = TextBoxAdresse.Text, Num_Tel = int.Parse(TextBoxTelephone.Text), mail = TextBoxMail.Text, Contact = TextBoxContact.Text, };
-            LibArcachon.EntrepriseDAO.Add(ajout);
+            EnableButton();
+        }
 
+        private void TextBoxMail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EnableButton();
+        }
 
+        private void TextBoxTelephone_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EnableButton();
+        }
 
-            LibArcachon.Sponsoring ajoutS = new LibArcachon.Sponsoring { Montant = int.Parse(TextBoxMontant.Text) };
-            LibArcachon.SponsoringDAO.Add(ajoutS);
+        private void TextBoxAdresse_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EnableButton();
+        }
+
+        private void TextBoxNomEntreprise_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            EnableButton();
         }
     }
 }

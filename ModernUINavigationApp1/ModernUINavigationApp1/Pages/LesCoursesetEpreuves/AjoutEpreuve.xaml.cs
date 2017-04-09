@@ -24,6 +24,19 @@ namespace ModernUINavigationApp1.Pages
         {
             InitializeComponent();
             ComboBoxChoixCourse.ItemsSource = LibArcachon.CourseDAO.List();
+            ButtonValider.IsEnabled = false;
+        }
+
+        private void enableButton()
+        {
+            if (TexdBoxPointDepart.Text == "" || TextBoxHeureArriveTheo.Value == null || TextBoxPointArrive.Text == "" || ComboBoxChoixCourse.SelectedItem == null || TextBoxHeureDepart.Value == null)
+            {
+                ButtonValider.IsEnabled = false;
+            }
+            else
+            {
+                ButtonValider.IsEnabled = true;
+            }
         }
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
@@ -33,6 +46,31 @@ namespace ModernUINavigationApp1.Pages
             int id_course = lacourse.Id_Course;
             LibArcachon.Epreuve lol = new LibArcachon.Epreuve { Point_Arrive = TexdBoxPointDepart.Text, Point_Depart = TexdBoxPointDepart.Text, Heure_Arrive_theorique = DateTime.Now, Heure_Depart = DateTime.Now,idcourse = id_course };
             LibArcachon.EpreuveDAO.Add(lol);
+        }
+
+        private void TexdBoxPointDepart_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            enableButton();
+        }
+
+        private void TextBoxPointArrive_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            enableButton();
+        }
+
+        private void TextBoxHeureDepart_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            enableButton();
+        }
+
+        private void TextBoxHeureArriveTheo_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            enableButton();
+        }
+
+        private void ComboBoxChoixCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            enableButton();
         }
     }
 }

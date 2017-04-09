@@ -11,20 +11,16 @@
                 <TextBlock Text="Ajout d'entreprise sponsor" Style="{StaticResource Heading2}" />
             </StackPanel>
         </ScrollViewer>
-        <Label x:Name="LabelNomEntreprise" Content="Nom de l'entreprise :" Margin="44,53,456,456.2"/>
-        <Label x:Name="LabelChoixBateau" Content="Choix du bateau à sponsoriser :" Margin="44,236,394,273.2"/>
-        <TextBox x:Name="TextBoxNomEntreprise" Margin="294,53,137,456.2" RenderTransformOrigin="0.5,0.5"/>
-        <Label x:Name="LabelAdresse" Content="Adresse :" Margin="44,84,543,421.2"/>
-        <TextBox x:Name="TextBoxAdresse" Margin="294,88,137,421.2"/>
-        <Label x:Name="LabelTelephone" Content="Numéro de téléphone :" Margin="44,119,456,390.2"/>
-        <TextBox x:Name="TextBoxTelephone" Margin="294,119,137,390.2"/>
-        <Label x:Name="LabelMail" Content="Mail :" Margin="44,150,530,359.2"/>
-        <TextBox x:Name="TextBoxMail" Margin="294,150,137,359.2"/>
-        <Label x:Name="LabelContact" Content="Contact :" Margin="44,201,530,304.2"/>
-        <TextBox x:Name="TextBoxContact" Margin="294,201,137,308.2"/>
-        <ComboBox x:Name="ComboBoxChoixBateau" Margin="294,236,137,273.2" DisplayMemberPath="Nom"/>
-        <Label x:Name="LabelMontant" Content="Montant :" Margin="44,276,530,233.2"/>
-        <TextBox x:Name="TextBoxMontant" Margin="294,276,137,233.2"/>
+        <Label x:Name="LabelNomEntreprise" Content="Nom de l'entreprise :" Margin="152,91,348.5,418.5"/>
+        <TextBox x:Name="TextBoxNomEntreprise" Margin="294,75,136.5,431.5" RenderTransformOrigin="0.5,0.5" TextChanged="TextBoxNomEntreprise_TextChanged"/>
+        <Label x:Name="LabelAdresse" Content="Adresse :" Margin="152,133,434.5,372.5"/>
+        <TextBox x:Name="TextBoxAdresse" Margin="294,133,136.5,375.5" TextChanged="TextBoxAdresse_TextChanged"/>
+        <Label x:Name="LabelTelephone" Content="Numéro de téléphone :" Margin="152,186,347.5,323.5"/>
+        <TextBox x:Name="TextBoxTelephone" Margin="294,185,136.5,323.5" TextChanged="TextBoxTelephone_TextChanged"/>
+        <Label x:Name="LabelMail" Content="Mail :" Margin="152,241,421.5,268.5"/>
+        <TextBox x:Name="TextBoxMail" Margin="294,227,136.5,281.5" TextChanged="TextBoxMail_TextChanged"/>
+        <Label x:Name="LabelContact" Content="Contact :" Margin="152,295,422.5,210.5"/>
+        <TextBox x:Name="TextBoxContact" Margin="294,281,136.5,227.5" TextChanged="TextBoxContact_TextChanged"/>
         <Button x:Name="ButtonValider" Content="Valider" Margin="239,348,246,153.2" Click="ButtonValider_Click"/>
     </Grid>
 </UserControl>
