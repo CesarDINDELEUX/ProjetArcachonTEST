@@ -38,15 +38,12 @@ namespace LibArcachon
         /// </summary>
         /// <param name="entreprise">L'entreprise choisie.</param>
         /// <returns>Retourne une confirmation (string) </returns>
-        public static string Edit(Entreprise entreprise)
+        public static void Edit(Entreprise entreprise)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
-
             db.Entreprise.Attach(entreprise);
             db.Entry(entreprise).State = System.Data.Entity.EntityState.Modified;
-            string Retour = System.String.Format("L'entreprise {0} à bien été modifié", entreprise.Nom);
             db.SaveChanges();
-            return Retour;
         }
 
         /// <summary>

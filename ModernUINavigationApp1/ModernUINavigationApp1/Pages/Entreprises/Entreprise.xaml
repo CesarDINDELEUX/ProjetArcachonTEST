@@ -8,7 +8,7 @@
     <Grid Style="{StaticResource ContentRoot}" Margin="16,28,16,22.6">
         <ScrollViewer Margin="-10,0,10,0">
             <StackPanel MinWidth="200">
-                <TextBlock Text="Entreprises Sponsors" Style="{StaticResource Heading2}" />
+                <TextBlock Text="Entreprises Sponsors" Style="{StaticResource Heading1}" HorizontalAlignment="Center"/>
             </StackPanel>
         </ScrollViewer>
         <ListView x:Name="ListViewEntreprise" Background="{x:Null}" BorderThickness="1" BorderBrush="Black" Margin="33,121,38.5,144.4" ItemsSource="{Binding Path=Entreprise}">

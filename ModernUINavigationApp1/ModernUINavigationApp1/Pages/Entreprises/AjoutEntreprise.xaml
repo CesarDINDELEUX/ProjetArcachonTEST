@@ -4,23 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             mc:Ignorable="d" Background="#FFFDFCFC" Height="579.291" Width="668.284">
+             mc:Ignorable="d" Background="#FFFDFCFC" Height="580.591" Width="669.784">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer>
+        <ScrollViewer Margin="0,0,-15,-23.5">
             <StackPanel MinWidth="200">
-                <TextBlock Text="Ajout d'entreprise sponsor" Style="{StaticResource Heading2}" />
+                <TextBlock Style="{StaticResource Heading2}" ><Run Text="Ajout / Edition d'entrepris"/><Run Text="e sp"/><Run Text="onsor"/></TextBlock>
             </StackPanel>
         </ScrollViewer>
-        <Label x:Name="LabelNomEntreprise" Content="Nom de l'entreprise :" Margin="152,91,348.5,418.5"/>
-        <TextBox x:Name="TextBoxNomEntreprise" Margin="294,75,136.5,431.5" RenderTransformOrigin="0.5,0.5" TextChanged="TextBoxNomEntreprise_TextChanged"/>
-        <Label x:Name="LabelAdresse" Content="Adresse :" Margin="152,133,434.5,372.5"/>
-        <TextBox x:Name="TextBoxAdresse" Margin="294,133,136.5,375.5" TextChanged="TextBoxAdresse_TextChanged"/>
-        <Label x:Name="LabelTelephone" Content="Numéro de téléphone :" Margin="152,186,347.5,323.5"/>
-        <TextBox x:Name="TextBoxTelephone" Margin="294,185,136.5,323.5" TextChanged="TextBoxTelephone_TextChanged"/>
-        <Label x:Name="LabelMail" Content="Mail :" Margin="152,241,421.5,268.5"/>
-        <TextBox x:Name="TextBoxMail" Margin="294,227,136.5,281.5" TextChanged="TextBoxMail_TextChanged"/>
-        <Label x:Name="LabelContact" Content="Contact :" Margin="152,295,422.5,210.5"/>
-        <TextBox x:Name="TextBoxContact" Margin="294,281,136.5,227.5" TextChanged="TextBoxContact_TextChanged"/>
-        <Button x:Name="ButtonValider" Content="Valider" Margin="239,348,246,153.2" Click="ButtonValider_Click"/>
+        <Label x:Name="LabelNomEntreprise" Content="Nom de l'entreprise :" Margin="152,136,348.5,373.5"/>
+        <TextBox x:Name="TextBoxNomEntreprise" Margin="294,136,136.5,370.5" RenderTransformOrigin="0.5,0.5" TextChanged="TextBoxNomEntreprise_TextChanged"/>
+        <Label x:Name="LabelAdresse" Content="Adresse :" Margin="152,183,434.5,322.5"/>
+        <TextBox x:Name="TextBoxAdresse" Margin="294,186,136.5,322.5" TextChanged="TextBoxAdresse_TextChanged"/>
+        <Label x:Name="LabelTelephone" Content="Numéro de téléphone :" Margin="152,242,347.5,267.5"/>
+        <TextBox x:Name="TextBoxTelephone" Margin="294,241,136.5,267.5" TextChanged="TextBoxTelephone_TextChanged"/>
+        <Label x:Name="LabelMail" Content="Mail :" Margin="152,302,421.5,207.5"/>
+        <Label x:Name="label" Content="Edition d'une entreprise :" Margin="182,71,303.5,442.5"/>
+        <TextBox x:Name="TextBoxMail" Margin="294,302,136.5,206.5" TextChanged="TextBoxMail_TextChanged"/>
+        <Label x:Name="LabelContact" Content="Contact :" Margin="153,358,421.5,147.5"/>
+        <TextBox x:Name="TextBoxContact" Margin="294,358,136.5,150.5" TextChanged="TextBoxContact_TextChanged"/>
+        <Button x:Name="ButtonValider" Content="Valider" Margin="239,425,246.5,75.5" Click="ButtonValider_Click"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="338,71,0,0">
+
+        </ComboBox>
+
     </Grid>
 </UserControl>

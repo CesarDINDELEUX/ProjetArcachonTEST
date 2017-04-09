@@ -25,6 +25,8 @@ namespace ModernUINavigationApp1.Pages
             InitializeComponent();
             List<LibArcachon.Course> Coursess = new List<LibArcachon.Course>();
             Coursess = LibArcachon.CourseDAO.List();
+            Courses nullcourse = new Courses(null);
+            Coursess.Insert(0, null);
             ComboBoxCourse.ItemsSource = Coursess;
         }
 
@@ -37,7 +39,8 @@ namespace ModernUINavigationApp1.Pages
 
         private void ComboBoxCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LibArcachon.Course lol = ComboBoxCourse.SelectedItem as LibArcachon.Course; 
+            LibArcachon.Course lol = ComboBoxCourse.SelectedItem as LibArcachon.Course;
+             
             List<LibArcachon.Epreuve> ListEp = LibArcachon.EpreuveDAO.getEpreuvesByCourse(lol.Id_Course);
             ListViewEpreuve.ItemsSource = ListEp;
         }

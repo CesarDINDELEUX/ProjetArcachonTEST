@@ -20,6 +20,7 @@ namespace ModernUINavigationApp1.Pages
     /// </summary>
     public partial class Courses : UserControl
     {
+
         public Courses()
         {
             InitializeComponent();
@@ -29,6 +30,5 @@ namespace ModernUINavigationApp1.Pages
             ListViewCourses.ItemsSource = lol;        
             
         }
-
     }
 }
