@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="51766230cb164893965d4960d3bdf5c3" Name="Diagram1">
         <EntityTypeShape EntityType="ProjetArcachonModel.Course" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetArcachonModel.Entreprise" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetArcachonModel.Entreprise" Width="1.5" PointX="6.25" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Epreuve" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.ListePenalite" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Membre" Width="1.5" PointX="8.75" PointY="7" IsExpanded="true" />

@@ -136,6 +136,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Penalite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Penalites\AjoutPenalités.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Penalites\ListePenalite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Voilier\AjoutVoilier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +187,15 @@
     </Compile>
     <Compile Include="Pages\ListeVoilier.xaml.cs">
       <DependentUpon>ListeVoilier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalite.xaml.cs">
+      <DependentUpon>Penalite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalites\AjoutPenalités.xaml.cs">
+      <DependentUpon>AjoutPenalités.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalites\ListePenalite.xaml.cs">
+      <DependentUpon>ListePenalite.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Voilier\AjoutVoilier.xaml.cs">
       <DependentUpon>AjoutVoilier.xaml</DependentUpon>
