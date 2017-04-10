@@ -11,6 +11,7 @@
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="Ajouter un voilier" Source="/Pages/Voilier/AjoutVoilier.xaml" />
+                <mui:Link DisplayName="Ajouter un voilier" Source="/Pages/Voilier/AjoutVoilier.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>

@@ -6,29 +6,15 @@
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" Height="423.761" Width="540.525" Background="White">
     <Grid Style="{StaticResource ContentRoot}">
-        <ScrollViewer Margin="0,0,-0.2,0">
-            <StackPanel MinWidth="200">
-                <TextBlock Text="Ajout d'un voilier" Style="{StaticResource Heading2}" />
-            </StackPanel>
-        </ScrollViewer>
-        <Label x:Name="LabelNomVoilier" Content="Nom du voilier :" Margin="60,40,356.8,317"/>
-        <TextBox x:Name="TextBoxNomVoilier" Margin="196,40,116.8,317"/>
-        <Label x:Name="LabelTypeDeVoilier" Content="Choix tu type de voilier :" Margin="60,68,317.8,291"/>
-        <Label x:Name="LabelChoixEntreprise" Content="Choix des entreprises sponsors :" Margin="16,161,317.8,198"/>
-        <Label x:Name="LabelAjoutEntreprise" Content="Nom de l'entreprise à ajouter :" Margin="332,161,5.8,201"/>
-        <ComboBox x:Name="ComboBoxChoixDeVoilier" Margin="210,68,167.8,286"/>
-        <Button x:Name="ButtonAjoutType" Content="Ajouter" Margin="362,68,24.8,286"/>
-        <Label x:Name="LabelDescription" Content="Description :" Margin="60,99,356.8,259"/>
-        <TextBox x:Name="TextBoxDescription" Margin="196,99,55.8,255"/>
-        <ListView BorderBrush="Black" BorderThickness="1" Margin="191,156,181.8,67" RenderTransformOrigin="0.5,0.5" DisplayMemberPath="{Binding Path=Entreprise}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Nom de l'entreprise" DisplayMemberBinding="{Binding Path=Nom}"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="ButtonAjoutEntreprise" Content="Ajouter" Margin="362,221,24.8,133"/>
-        <TextBox x:Name="TextBoxAjoutEntreprise" Margin="346,184,9.8,174"/>
-        <Button x:Name="ButtonValider" Content="Valider" Margin="210,344,201.8,10"/>
+
+        <TextBox x:Name="TextBoxSerie" Height="23" Width="196" Margin="196,99,116.5,255" TextChanged="TextBoxSerie_TextChanged"/>
+
+        <Label x:Name="LabelSerieVoilier" Content="Numéro de série :" Margin="40,99,356.5,261"/>
+
+        <Label x:Name="LabelNomVoilier" Content="Nom du voilier :" Margin="40,130,377.5,227"/>
+        <TextBox x:Name="TextBoxNomVoilier" Margin="196,130,116.5,227" TextChanged="TextBoxNomVoilier_TextChanged"/>
+        <Label x:Name="LabelTypeDeVoilier" Content="Classe du voilier :" Margin="40,158,339.5,201"/>
+        <ComboBox x:Name="ComboBoxChoixDeVoilier" Margin="196,158,181.5,196" SelectionChanged="ComboBoxChoixDeVoilier_SelectionChanged" DisplayMemberPath="Nom"/>
+        <Button x:Name="ButtonValider" Content="Valider" Margin="230,278,181.5,76" Click="ButtonValider_Click"/>
     </Grid>
 </UserControl>
