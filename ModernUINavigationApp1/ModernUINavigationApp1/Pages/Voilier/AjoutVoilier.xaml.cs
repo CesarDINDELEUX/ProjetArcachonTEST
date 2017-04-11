@@ -20,13 +20,14 @@ namespace ModernUINavigationApp1.Pages
     /// </summary>
     public partial class AjoutVoilier : UserControl
     {
+
         public AjoutVoilier()
         {
+
             InitializeComponent();
             ComboBoxChoixDeVoilier.ItemsSource = LibArcachon.TypeDeClasseDAO.ListAll();
             ButtonValider.IsEnabled = false;
             
-              
         }
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
@@ -62,5 +63,6 @@ namespace ModernUINavigationApp1.Pages
         {
             enable_button();
         }
+
     }
 }

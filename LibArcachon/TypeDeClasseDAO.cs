@@ -62,6 +62,12 @@ namespace LibArcachon
         }
 
 
+        public static string getnomclasse(int idclasse)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            string nomclasse = db.TypeDeClasse.Where(x => x.Id_Classe == idclasse).ToString();
+            return nomclasse;
+        }
 
 
 

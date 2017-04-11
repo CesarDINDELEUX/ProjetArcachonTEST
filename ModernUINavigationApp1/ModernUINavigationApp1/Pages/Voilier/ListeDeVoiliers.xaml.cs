@@ -13,20 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ModernUINavigationApp1.Pages
+namespace ModernUINavigationApp1.Pages.Voilier
 {
     /// <summary>
-    /// Interaction logic for LesCourses.xaml
+    /// Logique d'interaction pour ListeDeVoiliers.xaml
     /// </summary>
-    public partial class LesCourses : UserControl
+    public partial class ListeDeVoiliers : UserControl
     {
-        public LesCourses()
+
+        public ListeDeVoiliers()
         {
+            
             InitializeComponent();
 
-
-
+            List<LibArcachon.Voilier> listedevoilier = LibArcachon.VoilierDAO.ListAll();
+            ListViewVoiliers.ItemsSource = listedevoilier;
 
         }
+       
+
     }
+
 }
