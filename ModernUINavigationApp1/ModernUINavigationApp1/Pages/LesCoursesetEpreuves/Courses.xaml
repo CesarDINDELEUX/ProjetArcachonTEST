@@ -24,7 +24,13 @@
 
                     <GridViewColumn Header="Date de début" Width="auto"></GridViewColumn>
                     <GridViewColumn Header="Date de fin" Width="Auto"></GridViewColumn>
-                    <GridViewColumn Header="Gagnant de la course" Width="Auto"></GridViewColumn>
+                    <GridViewColumn Header="Classement" Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonClassement" Content="Afficher"></Button>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

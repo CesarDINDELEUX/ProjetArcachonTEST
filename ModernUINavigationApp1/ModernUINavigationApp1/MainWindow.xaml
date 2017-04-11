@@ -10,6 +10,7 @@
         <mui:LinkGroup DisplayName="Retour arrière">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Accueil" Source="/Pages/Home.xaml" />
+                <mui:Link DisplayName="Classements" Source="/Pages/Classement.xaml"/>
                 <mui:Link DisplayName="Les Courses et les épreuves" Source="/Pages/LesCourses.xaml"/>
                 <mui:Link DisplayName="Gestion des entreprises" Source="/Pages/GestionEntreprise.xaml"/>
                 <mui:Link DisplayName="Les Voiliers" Source="/Pages/ListeVoilier.xaml"/>

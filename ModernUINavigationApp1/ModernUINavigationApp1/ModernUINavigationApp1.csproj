@@ -91,6 +91,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Classement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Classement\ClassementEpreuve.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GestionEntreprise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +107,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Pages\Classement.xaml.cs">
+      <DependentUpon>Classement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Classement\ClassementEpreuve.xaml.cs">
+      <DependentUpon>ClassementEpreuve.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GestionEntreprise.xaml.cs">
       <DependentUpon>GestionEntreprise.xaml</DependentUpon>
     </Compile>
@@ -114,7 +128,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Classement\ClassementCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ListeVoilier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Penalite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Penalites\AjoutPenalités.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Penalites\ListePenalite.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,8 +182,20 @@
     <Compile Include="Pages\LesCoursesetEpreuves\AjoutEpreuve.xaml.cs">
       <DependentUpon>AjoutEpreuve.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Classement\ClassementCourse.xaml.cs">
+      <DependentUpon>ClassementCourse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ListeVoilier.xaml.cs">
       <DependentUpon>ListeVoilier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalite.xaml.cs">
+      <DependentUpon>Penalite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalites\AjoutPenalités.xaml.cs">
+      <DependentUpon>AjoutPenalités.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Penalites\ListePenalite.xaml.cs">
+      <DependentUpon>ListePenalite.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Voilier\AjoutVoilier.xaml.cs">
       <DependentUpon>AjoutVoilier.xaml</DependentUpon>
