@@ -12,9 +12,9 @@
             </StackPanel>
         </ScrollViewer>
         <Label x:Name="LabelBateau" Content="Choix du bateau :" Margin="71,55,506.2,386.4"/>
-        <ComboBox x:Name="ComboBoxListeBateau" Margin="183,55,337.2,381.4"/>
+        <ComboBox x:Name="ComboBoxListeBateau" Margin="183,55,337.2,381.4" DisplayMemberPath="Nom" SelectionChanged="ComboBoxListeBateau_SelectionChanged"/>
         <Label x:Name="LabelClasseBateau" Content="Classe du bateau :" Margin="347,55,227.2,386.4"/>
-        <ComboBox x:Name="TextBoxClasseBateau" Margin="461,55,17.2,381.4"/>
+        <TextBox x:Name="TextBoxClasseBateau" Margin="461,55,17.2,381.4"/>
         <Label x:Name="LabelBarreur" Content="Barreur :" Margin="29,102,573.2,340.4"/>
         <TextBox x:Name="TextBoxNomBarreur" Text="Nom" Margin="107,102,474.2,340.4" GotFocus="TextBoxNomBarreur_GotFocus"/>
         <TextBox x:Name="TextBoxPrenomBarreur" Text="Prénom" Margin="226,102,355.2,340.4" GotFocus="TextBoxPrenomBarreur_GotFocus"/>
@@ -37,7 +37,7 @@
         <TextBox x:Name="TextBoxSexeEquipier2" Text="Sexe H/F" Margin="107,236,474.2,206.4" GotFocus="TextBoxSexeEquipier2_GotFocus"/>
         <TextBox x:Name="TextBoxNeeEquipier2" Text="Né(e) le :" Margin="226,236,355.2,206.4" GotFocus="TextBoxNeeEquipier2_GotFocus"/>
         <Label x:Name="LabelChoixCourse" Content="Choix de la course :" Margin="71,320,497.2,123.4"/>
-        <ComboBox x:Name="ComboBoxListeCourse" Margin="183,320,331.2,123.4" Height="auto"/>
+        <ComboBox x:Name="ComboBoxListeCourse" Margin="183,320,331.2,123.4" Height="auto" DisplayMemberPath="Nom"/>
         <Label x:Name="LabelDateDebut" Content="Date de début :" Margin="94,344,497.2,97.4"/>
         <TextBox x:Name="TextBoxDateDebut" Margin="183,344,388.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateDebut_GotFocus"/>
         <Label x:Name="LabelDateFin" Content="Date de fin :" Margin="347,344,256.2,97.4"/>

@@ -145,5 +145,12 @@ namespace ModernUINavigationApp1.Pages
             LibArcachon.PersonneDao.Add(equipier2);
             
         }
+
+        private void ComboBoxListeBateau_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LibArcachon.Voilier levoilier = ComboBoxListeBateau.SelectedItem as LibArcachon.Voilier;
+            TextBoxClasseBateau.Text= levoilier.TypeDeClasse.Nom;
+
+        }
     }
 }

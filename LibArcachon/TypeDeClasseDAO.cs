@@ -69,7 +69,17 @@ namespace LibArcachon
             return nomclasse;
         }
 
-
+        /// <summary>
+        /// Nom d'une classe par bateau
+        /// </summary>
+        /// <param name="bateauid">id du bateau</param>
+        /// <returns></returns>
+        public static string getNomClasseByBateau(int bateauID)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            string NomClasse = db.TypeDeClasse.Where(f => f.Id_Classe == bateauID).ToString();
+            return NomClasse;
+        }
 
 
     }
