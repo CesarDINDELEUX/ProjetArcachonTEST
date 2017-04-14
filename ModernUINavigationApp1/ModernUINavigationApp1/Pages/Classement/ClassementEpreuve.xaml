@@ -21,7 +21,14 @@
                     <GridViewColumn Header="Rang"/>
                     <GridViewColumn Header="Nom du bateau"/>
                     <GridViewColumn Header="Temps"/>
-                    <GridViewColumn Header="Pénalité"/>
+                    <GridViewColumn Header="Nombre de pénalités"/>
+                    <GridViewColumn Header="Pénalité">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonPenalite" Content="Ajouter" Click="ButtonPenalite_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

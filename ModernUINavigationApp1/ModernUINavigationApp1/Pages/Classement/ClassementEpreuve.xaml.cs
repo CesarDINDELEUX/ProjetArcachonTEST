@@ -24,5 +24,10 @@ namespace ModernUINavigationApp1.Pages.Classement
         {
             InitializeComponent();
         }
+
+        private void ButtonPenalite_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
