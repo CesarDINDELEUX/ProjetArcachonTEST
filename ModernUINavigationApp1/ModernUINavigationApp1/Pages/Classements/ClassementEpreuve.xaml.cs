@@ -33,5 +33,10 @@ namespace ModernUINavigationApp1.Pages.Classement
             int id_course = lacourse.Id_Course;
             ComboBoxEpreuve.ItemsSource = LibArcachon.EpreuveDAO.getEpreuvesByCourse(id_course);
         }
+
+        private void ButtonPenalite_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
