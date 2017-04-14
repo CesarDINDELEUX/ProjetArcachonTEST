@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ModernUINavigationApp1.Pages.LesCoursesetEpreuves
+namespace ModernUINavigationApp1.Pages.Classements
 {
     /// <summary>
-    /// Interaction logic for ClassementCourse.xaml
+    /// Logique d'interaction pour Penalite.xaml
     /// </summary>
-    public partial class ClassementCourse : UserControl
+    public partial class Penalite : UserControl
     {
-        public ClassementCourse()
+        public Penalite()
         {
             InitializeComponent();
-            List<LibArcachon.Course> Coursess = new List<LibArcachon.Course>();
-            Coursess = LibArcachon.CourseDAO.List();
-            ComboBoxCourse.ItemsSource = Coursess;
         }
     }
 }

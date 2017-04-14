@@ -20,6 +20,13 @@ namespace LibArcachon
             db.SaveChanges();
         }
 
+        public static List<Epreuve> List()
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            List<Epreuve> ListeEpreuve = db.Epreuve.ToList();
+            return ListeEpreuve;
+        }
+
         /// <summary>
         /// Supprimer une Epreuve
         /// </summary>

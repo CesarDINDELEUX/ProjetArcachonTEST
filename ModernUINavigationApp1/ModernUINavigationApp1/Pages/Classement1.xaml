@@ -14,7 +14,8 @@
                     <!-- TODO: set @Source -->
                     <mui:Link DisplayName="Classement par course" Source="/Pages/Classements/ClassementCourse.xaml" />
                     <mui:Link DisplayName="Classement par epreuve" Source="/Pages/Classements/ClassementEpreuve.xaml" />
-                </mui:ModernTab.Links>
+                    <mui:Link DisplayName="Pénalités" Source="/Pages/Classements/Penalite.xaml" />
+            </mui:ModernTab.Links>
             </mui:ModernTab>
         </Grid>
 </UserControl>

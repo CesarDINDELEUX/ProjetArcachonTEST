@@ -23,7 +23,15 @@ namespace ModernUINavigationApp1.Pages
         public Inscription()
         {
             InitializeComponent();
+            ComboBoxListeCourse.ItemsSource = LibArcachon.CourseDAO.List();
+            ComboBoxListeBateau.ItemsSource = LibArcachon.VoilierDAO.ListAll();
         }
+
+
+
+
+
+
 
         #region TextBox vider au GotFocus
         private void TextBoxDateFin_GotFocus(object sender, RoutedEventArgs e)
@@ -126,5 +134,16 @@ namespace ModernUINavigationApp1.Pages
             TextBoxNeeEquipier2.Text = "";
         }
         #endregion
+
+        private void BoutonValiderInscription_Click(object sender, RoutedEventArgs e)
+        {
+            LibArcachon.Personne Barreur = new LibArcachon.Personne { Nom = TextBoxNomBarreur.Text, Prenom = TextBoxPrenomBarreur.Text, Date_naissance = DateTime.Parse(TextBoxNeeBarreur.Text), Numero_Licence = TextBoxLicenceBarreur.Text, Numero_Club = TextBoxClubBarreur.Text, Sexe = TextBoxSexeBarreur.Text };
+            LibArcachon.Personne equipier1 = new LibArcachon.Personne { Nom = TextBoxNomEquipier1.Text, Prenom = TextBoxPrenomEquipier1.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier1.Text), Numero_Licence = TextBoxLicenceEquipier1.Text, Numero_Club = TextBoxClubEquipier1.Text, Sexe = TextBoxSexeEquipier1.Text };
+            LibArcachon.Personne equipier2 = new LibArcachon.Personne { Nom = TextBoxNomEquipier2.Text, Prenom = TextBoxPrenomEquipier2.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier2.Text), Numero_Club = TextBoxClubEquipier2.Text, Numero_Licence = TextBoxLicenceEquipier2.Text, Sexe = TextBoxSexeEquipier2.Text };
+            LibArcachon.PersonneDao.Add(Barreur);
+            LibArcachon.PersonneDao.Add(equipier1);
+            LibArcachon.PersonneDao.Add(equipier2);
+            
+        }
     }
 }

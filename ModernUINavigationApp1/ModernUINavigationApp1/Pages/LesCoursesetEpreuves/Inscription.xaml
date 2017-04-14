@@ -44,6 +44,6 @@
         <TextBox x:Name="TextBoxDateFin" Margin="461,344,120.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateFin_GotFocus"/>
         <Label x:Name="LabelLieu" Content="Lieu :" Margin="142,370,497.2,73.4"/>
         <TextBox x:Name="TextBoxLieu" Margin="183,370,237.2,72.4"/>
-        <Button x:Name="BoutonValiderInscription" Content="Valider" Margin="277,422,237.2,10.4"/>
+        <Button x:Name="BoutonValiderInscription" Content="Valider" Margin="277,422,237.2,10.4" Click="BoutonValiderInscription_Click"/>
     </Grid>
 </UserControl>

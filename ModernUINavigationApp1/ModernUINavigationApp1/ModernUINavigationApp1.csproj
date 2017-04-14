@@ -99,6 +99,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Classements\Penalite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GestionEntreprise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +116,9 @@
     </Compile>
     <Compile Include="Pages\Classements\ClassementEpreuve.xaml.cs">
       <DependentUpon>ClassementEpreuve.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Classements\Penalite.xaml.cs">
+      <DependentUpon>Penalite.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GestionEntreprise.xaml.cs">
       <DependentUpon>GestionEntreprise.xaml</DependentUpon>

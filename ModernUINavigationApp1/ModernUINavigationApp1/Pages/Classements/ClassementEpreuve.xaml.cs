@@ -23,6 +23,15 @@ namespace ModernUINavigationApp1.Pages.Classement
         public ClassementEpreuve()
         {
             InitializeComponent();
+            ComboBoxCourse.ItemsSource = LibArcachon.CourseDAO.List();
+        }
+
+        private void ComboBoxCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxEpreuve.ItemsSource = null;
+            LibArcachon.Course lacourse = ComboBoxCourse.SelectedItem as LibArcachon.Course;
+            int id_course = lacourse.Id_Course;
+            ComboBoxEpreuve.ItemsSource = LibArcachon.EpreuveDAO.getEpreuvesByCourse(id_course);
         }
     }
 }
