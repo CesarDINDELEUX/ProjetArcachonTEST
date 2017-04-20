@@ -44,14 +44,11 @@ namespace LibArcachon
             return Retour;
         }
 
-        public static string Add(ListePenalite listepenalite)
+        public static void Add(ListePenalite lapena)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
-
-            db.ListePenalite.Add(listepenalite);
-            string Retour = System.String.Format("La penalité {0} à bien été supprimé", listepenalite.Nom);
+            db.ListePenalite.Add(lapena);
             db.SaveChanges();
-            return Retour;
         }
 
 

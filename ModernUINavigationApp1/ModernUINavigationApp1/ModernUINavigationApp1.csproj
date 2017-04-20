@@ -131,6 +131,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LesCoursesetEpreuves\AjoutCourse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LesCoursesetEpreuves\AjoutEpreuve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +189,9 @@
     </Page>
     <Compile Include="Pages\Entreprises\AjoutEntreprise.xaml.cs">
       <DependentUpon>AjoutEntreprise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LesCoursesetEpreuves\AjoutCourse.xaml.cs">
+      <DependentUpon>AjoutCourse.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LesCoursesetEpreuves\AjoutEpreuve.xaml.cs">
       <DependentUpon>AjoutEpreuve.xaml</DependentUpon>

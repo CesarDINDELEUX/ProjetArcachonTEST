@@ -139,6 +139,7 @@
     <Compile Include="VoilierInscrit.cs">
       <DependentUpon>TableBDD.tt</DependentUpon>
     </Compile>
+    <Compile Include="VoilierInscritDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

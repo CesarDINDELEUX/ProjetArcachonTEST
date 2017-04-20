@@ -82,6 +82,9 @@ namespace LibArcachon
             return ListEpreuve;
                                         
         }
+
+
+
         /// <summary>
         /// Recupère les repreuves en fonction de l'id de la course
         /// </summary>

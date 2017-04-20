@@ -13,25 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ModernUINavigationApp1.Pages
+namespace ModernUINavigationApp1.Pages.LesCoursesetEpreuves
 {
     /// <summary>
-    /// Interaction logic for Courses.xaml
+    /// Logique d'interaction pour AjoutCourse.xaml
     /// </summary>
-    public partial class Courses : UserControl
+    public partial class AjoutCourse : UserControl
     {
-
-        public Courses()
+        public AjoutCourse()
         {
             InitializeComponent();
-            LibArcachon.CourseDAO.List();
-            List<LibArcachon.Course> lol = new List<LibArcachon.Course>();
-
-            lol = LibArcachon.CourseDAO.List();
-            ListViewCourses.ItemsSource = lol;
         }
 
+        private void ButtonValider_Click(object sender, RoutedEventArgs e)
+        {
+            LibArcachon.Course course = new LibArcachon.Course { Nom = textboxnomcourse.Text, Lieu = textboxlieu.Text };
+            LibArcachon.CourseDAO.Add(course);
 
-
+        }
     }
 }

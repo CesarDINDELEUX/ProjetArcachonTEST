@@ -42,6 +42,7 @@ namespace ModernUINavigationApp1.Pages
              
             List<LibArcachon.Epreuve> ListEp = LibArcachon.EpreuveDAO.getEpreuvesByCourse(lol.Id_Course);
             ListViewEpreuve.ItemsSource = ListEp;
+
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ModernUINavigationApp1.Pages.LesCoursesetEpreuves.AjoutCourse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModernUINavigationApp1.Pages.LesCoursesetEpreuves"
+             mc:Ignorable="d" Height="364.299" Width="455.639">
+    <Grid Style="{StaticResource ContentRoot}">
+        <ScrollViewer Margin="-10,0,9.5,0.5">
+            <StackPanel MinWidth="200">
+                <TextBlock Text="Ajout courses" Style="{StaticResource Heading2}" />
+            </StackPanel>
+        </ScrollViewer>
+        <Label x:Name="LabelPointdeDepart" Content="Nom de la course :" Margin="50,119,273.5,178.5"/>
+        <TextBox x:Name="textboxnomcourse" Margin="192,119,52.5,179.5"/>
+        <Label x:Name="LabelPointArrive" Content="Lieu :" Margin="50,180,287.5,118.5"/>
+        <TextBox x:Name="textboxlieu" Margin="192,180,52.5,118.5"/>
+        <Button x:Name="ButtonValider" Content="Valider" Margin="135,250,145.5,44.5" Click="ButtonValider_Click"/>
+    </Grid>
+</UserControl>

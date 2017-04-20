@@ -36,14 +36,8 @@
         <TextBox x:Name="TextBoxClubEquipier2" Text="N° Club" Margin="475,211,106.2,231.4" GotFocus="TextBoxClubEquipier2_GotFocus"/>
         <TextBox x:Name="TextBoxSexeEquipier2" Text="Sexe H/F" Margin="107,236,474.2,206.4" GotFocus="TextBoxSexeEquipier2_GotFocus"/>
         <TextBox x:Name="TextBoxNeeEquipier2" Text="Né(e) le :" Margin="226,236,355.2,206.4" GotFocus="TextBoxNeeEquipier2_GotFocus"/>
-        <Label x:Name="LabelChoixCourse" Content="Choix de la course :" Margin="71,320,497.2,123.4"/>
-        <ComboBox x:Name="ComboBoxListeCourse" Margin="183,320,331.2,123.4" Height="auto" DisplayMemberPath="Nom"/>
-        <Label x:Name="LabelDateDebut" Content="Date de début :" Margin="94,344,497.2,97.4"/>
-        <TextBox x:Name="TextBoxDateDebut" Margin="183,344,388.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateDebut_GotFocus"/>
-        <Label x:Name="LabelDateFin" Content="Date de fin :" Margin="347,344,256.2,97.4"/>
-        <TextBox x:Name="TextBoxDateFin" Margin="461,344,120.2,97.4" Text="jj/mm/aaaa" GotFocus="TextBoxDateFin_GotFocus"/>
-        <Label x:Name="LabelLieu" Content="Lieu :" Margin="142,370,497.2,73.4"/>
-        <TextBox x:Name="TextBoxLieu" Margin="183,370,237.2,72.4"/>
+        <Label x:Name="LabelChoixCourse" Content="Choix de la course :" Margin="183,320,385,123.5"/>
+        <ComboBox x:Name="ComboBoxListeCourse" Margin="315,320,199,123.5" Height="auto" DisplayMemberPath="Nom"/>
         <Button x:Name="BoutonValiderInscription" Content="Valider" Margin="277,422,237.2,10.4" Click="BoutonValiderInscription_Click"/>
     </Grid>
 </UserControl>

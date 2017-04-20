@@ -28,21 +28,8 @@ namespace ModernUINavigationApp1.Pages
         }
 
 
-
-
-
-
-
         #region TextBox vider au GotFocus
-        private void TextBoxDateFin_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDateFin.Text = "";
-        }
 
-        private void TextBoxDateDebut_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBoxDateDebut.Text = "";
-        }
 
         private void TextBoxNomBarreur_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -137,20 +124,26 @@ namespace ModernUINavigationApp1.Pages
 
         private void BoutonValiderInscription_Click(object sender, RoutedEventArgs e)
         {
-            LibArcachon.Personne Barreur = new LibArcachon.Personne { Nom = TextBoxNomBarreur.Text, Prenom = TextBoxPrenomBarreur.Text, Date_naissance = DateTime.Parse(TextBoxNeeBarreur.Text), Numero_Licence = TextBoxLicenceBarreur.Text, Numero_Club = TextBoxClubBarreur.Text, Sexe = TextBoxSexeBarreur.Text };
-            LibArcachon.Personne equipier1 = new LibArcachon.Personne { Nom = TextBoxNomEquipier1.Text, Prenom = TextBoxPrenomEquipier1.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier1.Text), Numero_Licence = TextBoxLicenceEquipier1.Text, Numero_Club = TextBoxClubEquipier1.Text, Sexe = TextBoxSexeEquipier1.Text };
-            LibArcachon.Personne equipier2 = new LibArcachon.Personne { Nom = TextBoxNomEquipier2.Text, Prenom = TextBoxPrenomEquipier2.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier2.Text), Numero_Club = TextBoxClubEquipier2.Text, Numero_Licence = TextBoxLicenceEquipier2.Text, Sexe = TextBoxSexeEquipier2.Text };
+            LibArcachon.ProjetArcachonEntities db = new LibArcachon.ProjetArcachonEntities();
+            int numeroinscription = (db.Personne.Count() / 3) + 1;
+            LibArcachon.Personne Barreur = new LibArcachon.Personne { Nom = TextBoxNomBarreur.Text, Prenom = TextBoxPrenomBarreur.Text, Date_naissance = DateTime.Parse(TextBoxNeeBarreur.Text), Numero_Licence = TextBoxLicenceBarreur.Text, Numero_Club = TextBoxClubBarreur.Text, Sexe = TextBoxSexeBarreur.Text, idNumeroInscription = numeroinscription.ToString() };
+            LibArcachon.Personne equipier1 = new LibArcachon.Personne { Nom = TextBoxNomEquipier1.Text, Prenom = TextBoxPrenomEquipier1.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier1.Text), Numero_Licence = TextBoxLicenceEquipier1.Text, Numero_Club = TextBoxClubEquipier1.Text, Sexe = TextBoxSexeEquipier1.Text, idNumeroInscription = numeroinscription.ToString() };
+            LibArcachon.Personne equipier2 = new LibArcachon.Personne { Nom = TextBoxNomEquipier2.Text, Prenom = TextBoxPrenomEquipier2.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier2.Text), Numero_Club = TextBoxClubEquipier2.Text, Numero_Licence = TextBoxLicenceEquipier2.Text, Sexe = TextBoxSexeEquipier2.Text, idNumeroInscription = numeroinscription.ToString() };
             LibArcachon.PersonneDao.Add(Barreur);
             LibArcachon.PersonneDao.Add(equipier1);
             LibArcachon.PersonneDao.Add(equipier2);
-            
+
+
+            LibArcachon.VoilierInscrit newvoilierinscrit = new LibArcachon.VoilierInscrit { Personne = Barreur, Personne1 = equipier1, Personne2 = equipier2, Course = ComboBoxListeCourse.SelectedItem as LibArcachon.Course};
+                       
         }
 
         private void ComboBoxListeBateau_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LibArcachon.Voilier levoilier = ComboBoxListeBateau.SelectedItem as LibArcachon.Voilier;
-            TextBoxClasseBateau.Text= levoilier.TypeDeClasse.Nom;
+            TextBoxClasseBateau.Text = levoilier.TypeDeClasse.Nom;
 
         }
+
     }
 }
