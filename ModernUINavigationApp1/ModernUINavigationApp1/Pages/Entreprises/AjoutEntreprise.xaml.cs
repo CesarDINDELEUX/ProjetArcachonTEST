@@ -25,7 +25,10 @@ namespace ModernUINavigationApp1.Pages
             InitializeComponent();
                 ButtonValider.IsEnabled = false;
         }
-
+        void NavigationService_LoadCompleted(object sender, NavigationEventArgs e)
+        {
+            bool test = (bool)e.ExtraData;
+        }
         private void EnableButton()
         {
             if (TextBoxAdresse.Text == "" || TextBoxContact.Text == "" || TextBoxMail.Text == "" || TextBoxNomEntreprise.Text == "" || TextBoxTelephone.Text == "")

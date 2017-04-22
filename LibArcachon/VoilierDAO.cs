@@ -54,6 +54,13 @@ namespace LibArcachon
             return Retour;
         }
 
+        public static void AddInsc(VoilierInscrit voilierInscrit)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+
+            db.VoilierInscrit.Add(voilierInscrit);
+            db.SaveChanges();
+        }
 
 
 

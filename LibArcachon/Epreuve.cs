@@ -14,6 +14,12 @@ namespace LibArcachon
     
     public partial class Epreuve
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Epreuve()
+        {
+            this.Temps = new HashSet<Temps>();
+        }
+    
         public int Id_Epreuve { get; set; }
         public string Point_Depart { get; set; }
         public string Point_Arrive { get; set; }
@@ -22,5 +28,7 @@ namespace LibArcachon
         public int idcourse { get; set; }
     
         public virtual Course Course { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Temps> Temps { get; set; }
     }
 }

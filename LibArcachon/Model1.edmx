@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProjetArcachonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ProjetArcachonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="Id_Course" />
@@ -89,6 +89,25 @@
           <Property Name="idEntreprise" Type="int" Nullable="false" />
           <Property Name="idVoilierInscrit" Type="int" Nullable="false" />
           <Property Name="Montant" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Temps">
+          <Key>
+            <PropertyRef Name="idTemps" />
+          </Key>
+          <Property Name="idTemps" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Temps" Type="datetime" Nullable="false" />
+          <Property Name="idVoilierInscrit" Type="int" Nullable="false" />
+          <Property Name="idEpreuve" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeDeClasse">
           <Key>
@@ -178,6 +197,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Temps_Epreuve">
+          <End Role="Epreuve" Type="Self.Epreuve" Multiplicity="1" />
+          <End Role="Temps" Type="Self.Temps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Epreuve">
+              <PropertyRef Name="Id_Epreuve" />
+            </Principal>
+            <Dependent Role="Temps">
+              <PropertyRef Name="idVoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Temps_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Temps" Type="Self.Temps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Temps">
+              <PropertyRef Name="idVoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Voilier_TypeDeClasse">
           <End Role="TypeDeClasse" Type="Self.TypeDeClasse" Multiplicity="1" />
           <End Role="Voilier" Type="Self.Voilier" Multiplicity="*" />
@@ -259,6 +302,8 @@
           <EntitySet Name="Penalite" EntityType="Self.Penalite" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personne" EntityType="Self.Personne" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sponsoring" EntityType="Self.Sponsoring" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Temps" EntityType="Self.Temps" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeDeClasse" EntityType="Self.TypeDeClasse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voilier" EntityType="Self.Voilier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VoilierInscrit" EntityType="Self.VoilierInscrit" Schema="dbo" store:Type="Tables" />
@@ -281,6 +326,14 @@
           <AssociationSet Name="FK_Sponsoring_VoilierInscrit" Association="Self.FK_Sponsoring_VoilierInscrit">
             <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
             <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Temps_Epreuve" Association="Self.FK_Temps_Epreuve">
+            <End Role="Epreuve" EntitySet="Epreuve" />
+            <End Role="Temps" EntitySet="Temps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Temps_VoilierInscrit" Association="Self.FK_Temps_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Temps" EntitySet="Temps" />
           </AssociationSet>
           <AssociationSet Name="FK_Voilier_TypeDeClasse" Association="Self.FK_Voilier_TypeDeClasse">
             <End Role="TypeDeClasse" EntitySet="TypeDeClasse" />
@@ -345,6 +398,7 @@
           <Property Name="Heure_Arrive_theorique" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="idcourse" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Course" Relationship="Self.FK_Epreuve_Course" FromRole="Epreuve" ToRole="Course" />
+          <NavigationProperty Name="Temps" Relationship="Self.FK_Temps_Epreuve" FromRole="Epreuve" ToRole="Temps" />
         </EntityType>
         <EntityType Name="ListePenalite">
           <Key>
@@ -409,6 +463,27 @@
           <NavigationProperty Name="Entreprise" Relationship="Self.FK_Sponsoring_Entreprise" FromRole="Sponsoring" ToRole="Entreprise" />
           <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_Sponsoring_VoilierInscrit" FromRole="Sponsoring" ToRole="VoilierInscrit" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Temps">
+          <Key>
+            <PropertyRef Name="idTemps" />
+          </Key>
+          <Property Name="idTemps" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Temps1" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idVoilierInscrit" Type="Int32" Nullable="false" />
+          <Property Name="idEpreuve" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Epreuve" Relationship="Self.FK_Temps_Epreuve" FromRole="Temps" ToRole="Epreuve" />
+          <NavigationProperty Name="VoilierInscrit" Relationship="Self.FK_Temps_VoilierInscrit" FromRole="Temps" ToRole="VoilierInscrit" />
+        </EntityType>
         <EntityType Name="TypeDeClasse">
           <Key>
             <PropertyRef Name="Id_Classe" />
@@ -445,6 +520,7 @@
           <NavigationProperty Name="Personne1" Relationship="Self.FK_VoilierInscrit_Equipier1" FromRole="VoilierInscrit" ToRole="Personne" />
           <NavigationProperty Name="Personne2" Relationship="Self.FK_VoilierInscrit_Equipier2" FromRole="VoilierInscrit" ToRole="Personne" />
           <NavigationProperty Name="Sponsoring" Relationship="Self.FK_Sponsoring_VoilierInscrit" FromRole="VoilierInscrit" ToRole="Sponsoring" />
+          <NavigationProperty Name="Temps" Relationship="Self.FK_Temps_VoilierInscrit" FromRole="VoilierInscrit" ToRole="Temps" />
           <NavigationProperty Name="Voilier" Relationship="Self.FK_VoilierInscrit_Voilier" FromRole="VoilierInscrit" ToRole="Voilier" />
         </EntityType>
         <Association Name="FK_Epreuve_Course">
@@ -480,6 +556,18 @@
             </Principal>
             <Dependent Role="Sponsoring">
               <PropertyRef Name="idEntreprise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Temps_Epreuve">
+          <End Role="Epreuve" Type="Self.Epreuve" Multiplicity="1" />
+          <End Role="Temps" Type="Self.Temps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Epreuve">
+              <PropertyRef Name="Id_Epreuve" />
+            </Principal>
+            <Dependent Role="Temps">
+              <PropertyRef Name="idVoilierInscrit" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -555,6 +643,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Temps_VoilierInscrit">
+          <End Role="VoilierInscrit" Type="Self.VoilierInscrit" Multiplicity="1" />
+          <End Role="Temps" Type="Self.Temps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VoilierInscrit">
+              <PropertyRef Name="Id_VoilierInscrit" />
+            </Principal>
+            <Dependent Role="Temps">
+              <PropertyRef Name="idVoilierInscrit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Voilier_TypeDeClasse">
           <End Role="TypeDeClasse" Type="Self.TypeDeClasse" Multiplicity="1" />
           <End Role="Voilier" Type="Self.Voilier" Multiplicity="*" />
@@ -588,6 +688,8 @@
           <EntitySet Name="Penalite" EntityType="Self.Penalite" />
           <EntitySet Name="Personne" EntityType="Self.Personne" />
           <EntitySet Name="Sponsoring" EntityType="Self.Sponsoring" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Temps" EntityType="Self.Temps" />
           <EntitySet Name="TypeDeClasse" EntityType="Self.TypeDeClasse" />
           <EntitySet Name="Voilier" EntityType="Self.Voilier" />
           <EntitySet Name="VoilierInscrit" EntityType="Self.VoilierInscrit" />
@@ -602,6 +704,10 @@
           <AssociationSet Name="FK_Sponsoring_Entreprise" Association="Self.FK_Sponsoring_Entreprise">
             <End Role="Entreprise" EntitySet="Entreprise" />
             <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Temps_Epreuve" Association="Self.FK_Temps_Epreuve">
+            <End Role="Epreuve" EntitySet="Epreuve" />
+            <End Role="Temps" EntitySet="Temps" />
           </AssociationSet>
           <AssociationSet Name="FK_Penalite_ListePenalite" Association="Self.FK_Penalite_ListePenalite">
             <End Role="ListePenalite" EntitySet="ListePenalite" />
@@ -626,6 +732,10 @@
           <AssociationSet Name="FK_Sponsoring_VoilierInscrit" Association="Self.FK_Sponsoring_VoilierInscrit">
             <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
             <End Role="Sponsoring" EntitySet="Sponsoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Temps_VoilierInscrit" Association="Self.FK_Temps_VoilierInscrit">
+            <End Role="VoilierInscrit" EntitySet="VoilierInscrit" />
+            <End Role="Temps" EntitySet="Temps" />
           </AssociationSet>
           <AssociationSet Name="FK_Voilier_TypeDeClasse" Association="Self.FK_Voilier_TypeDeClasse">
             <End Role="TypeDeClasse" EntitySet="TypeDeClasse" />
@@ -731,6 +841,27 @@
                 <ScalarProperty Name="idEntreprise" ColumnName="idEntreprise" />
                 <ScalarProperty Name="idVoilierInscrit" ColumnName="idVoilierInscrit" />
                 <ScalarProperty Name="Montant" ColumnName="Montant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Temps">
+            <EntityTypeMapping TypeName="ProjetArcachonModel.Temps">
+              <MappingFragment StoreEntitySet="Temps">
+                <ScalarProperty Name="idTemps" ColumnName="idTemps" />
+                <ScalarProperty Name="Temps1" ColumnName="Temps" />
+                <ScalarProperty Name="idVoilierInscrit" ColumnName="idVoilierInscrit" />
+                <ScalarProperty Name="idEpreuve" ColumnName="idEpreuve" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

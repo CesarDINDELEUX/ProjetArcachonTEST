@@ -129,13 +129,8 @@ namespace ModernUINavigationApp1.Pages
             LibArcachon.Personne Barreur = new LibArcachon.Personne { Nom = TextBoxNomBarreur.Text, Prenom = TextBoxPrenomBarreur.Text, Date_naissance = DateTime.Parse(TextBoxNeeBarreur.Text), Numero_Licence = TextBoxLicenceBarreur.Text, Numero_Club = TextBoxClubBarreur.Text, Sexe = TextBoxSexeBarreur.Text, idNumeroInscription = numeroinscription.ToString() };
             LibArcachon.Personne equipier1 = new LibArcachon.Personne { Nom = TextBoxNomEquipier1.Text, Prenom = TextBoxPrenomEquipier1.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier1.Text), Numero_Licence = TextBoxLicenceEquipier1.Text, Numero_Club = TextBoxClubEquipier1.Text, Sexe = TextBoxSexeEquipier1.Text, idNumeroInscription = numeroinscription.ToString() };
             LibArcachon.Personne equipier2 = new LibArcachon.Personne { Nom = TextBoxNomEquipier2.Text, Prenom = TextBoxPrenomEquipier2.Text, Date_naissance = DateTime.Parse(TextBoxNeeEquipier2.Text), Numero_Club = TextBoxClubEquipier2.Text, Numero_Licence = TextBoxLicenceEquipier2.Text, Sexe = TextBoxSexeEquipier2.Text, idNumeroInscription = numeroinscription.ToString() };
-            LibArcachon.PersonneDao.Add(Barreur);
-            LibArcachon.PersonneDao.Add(equipier1);
-            LibArcachon.PersonneDao.Add(equipier2);
-
-
-            LibArcachon.VoilierInscrit newvoilierinscrit = new LibArcachon.VoilierInscrit { Personne = Barreur, Personne1 = equipier1, Personne2 = equipier2, Course = ComboBoxListeCourse.SelectedItem as LibArcachon.Course};
-                       
+            LibArcachon.VoilierInscrit lol = new LibArcachon.VoilierInscrit { Personne = Barreur, Personne1 = equipier1, Personne2 = equipier2, idCourse = (ComboBoxListeCourse.SelectedItem as LibArcachon.Course).Id_Course, NumeroSerie = (ComboBoxListeBateau.SelectedItem as LibArcachon.Voilier).NumeroSerie };
+            LibArcachon.PersonneDao.Add(Barreur, equipier1, equipier2, lol );
         }
 
         private void ComboBoxListeBateau_SelectionChanged(object sender, SelectionChangedEventArgs e)

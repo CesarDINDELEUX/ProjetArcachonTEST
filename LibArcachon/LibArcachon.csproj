@@ -80,91 +80,96 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Course.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CourseDAO.cs" />
     <Compile Include="Entreprise.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EntrepriseDAO.cs" />
     <Compile Include="Epreuve.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EpreuveDAO.cs" />
     <Compile Include="Inscription.cs" />
     <Compile Include="ListePenalite.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ListePenaliteDAO.cs" />
     <Compile Include="Membre.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MembreDAO.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Penalite.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PenaliteDAO.cs" />
     <Compile Include="Personne.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonneDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sponsoring.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="SponsoringDAO.cs" />
-    <Compile Include="TableBDD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TableBDD.Context.tt</DependentUpon>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TableBDD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TableBDD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TableBDD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TableBDD.edmx</DependentUpon>
+    <Compile Include="Temps.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeDeClasse.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TypeDeClasseDAO.cs" />
     <Compile Include="Voilier.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="VoilierDAO.cs" />
     <Compile Include="VoilierInscrit.cs">
-      <DependentUpon>TableBDD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="VoilierInscritDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-    <EntityDeploy Include="TableBDD.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TableBDD.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TableBDD.edmx.diagram">
-      <DependentUpon>TableBDD.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TableBDD.Context.tt">
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TableBDD.edmx</DependentUpon>
-      <LastGenOutput>TableBDD.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TableBDD.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TableBDD.edmx</DependentUpon>
-      <LastGenOutput>TableBDD.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

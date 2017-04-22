@@ -51,14 +51,12 @@ namespace LibArcachon
         /// </summary>
         /// <param name="entreprise">Une entreprise</param>
         /// <returns>Retourne une phrase de confirmation (string)</returns>
-        public static string Delete(Entreprise entreprise)
+        public static void Delete(int identreprise)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
-
+            Entreprise entreprise = db.Entreprise.Find(identreprise);
             db.Entreprise.Remove(entreprise);
-            string Retour = System.String.Format("L'entreprise {0} à bien été supprimé", entreprise.Nom);
             db.SaveChanges();     
-            return Retour;
         }
 
         /// <summary>

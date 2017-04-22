@@ -28,6 +28,15 @@ namespace ModernUINavigationApp1.Pages
             Coursess.Insert(0, null);
             ComboBoxCourse.ItemsSource = Coursess;
         }
+        private void load(object sender, RoutedEventArgs e)
+        {
+        //    ListViewCourses.ItemsSource = null;
+        //    LibArcachon.CourseDAO.List();
+        //    List<LibArcachon.Course> lol = new List<LibArcachon.Course>();
+
+        //    lol = LibArcachon.CourseDAO.List();
+        //    ListViewCourses.ItemsSource = lol;
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

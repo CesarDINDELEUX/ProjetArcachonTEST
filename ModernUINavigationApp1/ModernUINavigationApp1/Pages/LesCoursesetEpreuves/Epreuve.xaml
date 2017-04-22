@@ -13,7 +13,7 @@
         </ScrollViewer>
 
         <ComboBox  x:Name="ComboBoxCourse" Margin="233,50,368.5,323" DisplayMemberPath="Nom" SelectionChanged="ComboBoxCourse_SelectionChanged"/>
-        <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Margin="10,111,106.5,32">
+        <ListView x:Name="ListViewEpreuve" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Margin="10,111,106.5,32" Loaded="load">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Point de départ" DisplayMemberBinding="{Binding Point_Depart}"/>

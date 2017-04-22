@@ -62,11 +62,15 @@ namespace LibArcachon
         /// </summary>
         /// <param name="personne">Personne a ajouter</param>
         /// <returns>Retourne message de confirmation</returns>
-        public static string Add(Personne personne)
+        public static string Add(Personne personne, Personne personne2, Personne personne3, VoilierInscrit voilierInscrit)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
             db.Personne.Add(personne);
+            db.Personne.Add(personne2);
+            db.Personne.Add(personne3);
+            db.VoilierInscrit.Add(voilierInscrit);
             db.SaveChanges();
+
             return "Ajout de la personne effectué";
         }
 

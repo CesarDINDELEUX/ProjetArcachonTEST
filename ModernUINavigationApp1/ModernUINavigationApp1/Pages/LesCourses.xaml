@@ -11,7 +11,7 @@
         <mui:ModernTab Layout="List">
             <mui:ModernTab.Links >
                 <!-- TODO: set @Source -->
-                <mui:Link DisplayName="Liste des Courses" Source="/Pages/LesCoursesetEpreuves/Courses.xaml" />
+                <mui:Link DisplayName="Liste des Courses" Source="/Pages/LesCoursesetEpreuves/Courses.xaml"/>
                 <mui:Link DisplayName="Liste des épreuves" Source="/Pages/LesCoursesetEpreuves/Epreuve.xaml" />
                 <mui:Link DisplayName="Ajouter une course" Source="/Pages/LesCoursesetEpreuves/AjoutCourse.xaml"/>
                 <mui:Link DisplayName="Ajouter une épreuve" Source="/Pages/LesCoursesetEpreuves/AjoutEpreuve.xaml"/>

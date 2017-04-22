@@ -24,6 +24,7 @@ namespace ModernUINavigationApp1.Pages
         public Courses()
         {
             InitializeComponent();
+            ListViewCourses.ItemsSource = null;
             LibArcachon.CourseDAO.List();
             List<LibArcachon.Course> lol = new List<LibArcachon.Course>();
 
@@ -31,7 +32,15 @@ namespace ModernUINavigationApp1.Pages
             ListViewCourses.ItemsSource = lol;
         }
 
+        private void load(object sender, RoutedEventArgs e)
+        {
+            ListViewCourses.ItemsSource = null;
+            LibArcachon.CourseDAO.List();
+            List<LibArcachon.Course> lol = new List<LibArcachon.Course>();
 
+            lol = LibArcachon.CourseDAO.List();
+            ListViewCourses.ItemsSource = lol;
+        }
 
     }
 }

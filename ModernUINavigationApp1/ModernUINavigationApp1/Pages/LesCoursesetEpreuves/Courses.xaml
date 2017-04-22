@@ -15,7 +15,7 @@
                 <TextBlock Text="Courses" Style="{StaticResource Heading2}" Margin="0,0,-0.2,0" />
             </StackPanel>
         </ScrollViewer>
-        <ListView x:Name="ListViewCourses" Margin="50,55,29.4,88.8" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1"  Background="{x:Null}">
+        <ListView x:Name="ListViewCourses" Margin="50,55,29.4,88.8" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="1"  Background="{x:Null}" Loaded="load">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom de la course" Width="auto" DisplayMemberBinding="{Binding Nom}"/>

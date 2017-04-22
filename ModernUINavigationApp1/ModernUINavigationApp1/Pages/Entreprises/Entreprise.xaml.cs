@@ -26,9 +26,26 @@ namespace ModernUINavigationApp1.Pages
             ListViewEntreprise.ItemsSource = LibArcachon.EntrepriseDAO.ListAll();
         }
 
-        private void ButtonModifier_Click(object sender, RoutedEventArgs e)
+        private void ButtonSupprimer_Click(object sender, RoutedEventArgs e)
         {
+            var Button = sender as Button;
+            int code = int.Parse(Button.Tag.ToString());
+            LibArcachon.EntrepriseDAO.Delete(code);
+            ListViewEntreprise.ItemsSource = LibArcachon.EntrepriseDAO.ListAll();
             
+            
+        }
+        //private void ButtonModifier_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var Button = sender as Button;
+        //    int code = int.Parse(Button.Tag.ToString());
+        //    NavigationCommands.GoToPage.Execute("/Pages/Entreprises/AjoutEntreprise.xaml#CustomerID=12345", this);
+
+
+        //}
+        private void load(object sender, RoutedEventArgs e)
+        {
+            ListViewEntreprise.ItemsSource = LibArcachon.EntrepriseDAO.ListAll();
         }
     }
 }

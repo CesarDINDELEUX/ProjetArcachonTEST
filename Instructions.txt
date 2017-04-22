@@ -1,0 +1,6 @@
+1 - Ajouter la BDD dans SQL server 
+2 - Supprimer "Model1.edmx" dans "LibArcachon"
+3 - Supprimer la "ConnexionString" dans les "App.config" de touts les projets (3)
+4 - Ajouter un element à LibArcachon, ADO.NET ...
+5 - Une fois fait, aller dans le App.Config de LibArachon, copier la nouvelle connexion string
+6 - La coller dans le App.Config des autres solutions.

@@ -44,7 +44,7 @@ namespace ModernUINavigationApp1.Pages
 
             LibArcachon.Course lacourse = ComboBoxChoixCourse.SelectedItem as LibArcachon.Course;
             int id_course = lacourse.Id_Course;
-            LibArcachon.Epreuve lol = new LibArcachon.Epreuve { Point_Arrive = TexdBoxPointDepart.Text, Point_Depart = TexdBoxPointDepart.Text, Heure_Depart = DateTime.Parse(TextBoxHeureDepart.Value.ToString()), Heure_Arrive_theorique = DateTime.Parse(TextBoxHeureArriveTheo.Value.ToString()), idcourse = id_course };
+            LibArcachon.Epreuve lol = new LibArcachon.Epreuve { Point_Arrive = TextBoxPointArrive.Text, Point_Depart = TexdBoxPointDepart.Text, Heure_Depart = DateTime.Parse(TextBoxHeureDepart.Value.ToString()), Heure_Arrive_theorique = DateTime.Parse(TextBoxHeureArriveTheo.Value.ToString()), idcourse = id_course };
             LibArcachon.EpreuveDAO.Add(lol);
         }
 

@@ -19,6 +19,7 @@ namespace LibArcachon
         {
             this.Penalite = new HashSet<Penalite>();
             this.Sponsoring = new HashSet<Sponsoring>();
+            this.Temps = new HashSet<Temps>();
         }
     
         public int Id_VoilierInscrit { get; set; }
@@ -37,6 +38,8 @@ namespace LibArcachon
         public virtual Personne Personne2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sponsoring> Sponsoring { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Temps> Temps { get; set; }
         public virtual Voilier Voilier { get; set; }
     }
 }

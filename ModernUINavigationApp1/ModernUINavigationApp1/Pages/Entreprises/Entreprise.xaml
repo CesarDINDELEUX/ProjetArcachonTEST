@@ -11,7 +11,7 @@
                 <TextBlock Text="Entreprises Sponsors" Style="{StaticResource Heading1}" HorizontalAlignment="Center"/>
             </StackPanel>
         </ScrollViewer>
-        <ListView x:Name="ListViewEntreprise" Background="{x:Null}" BorderThickness="1" BorderBrush="Black" Margin="33,121,38.5,144.4" ItemsSource="{Binding Path=Entreprise}">
+        <ListView x:Name="ListViewEntreprise" Background="{x:Null}" BorderThickness="1" BorderBrush="Black" Margin="33,121,38.5,144.4" ItemsSource="{Binding Path=Entreprise}" Loaded="load">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nom}"/>
@@ -22,7 +22,14 @@
                     <GridViewColumn Header="Modifier">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="ButtonModifier" Content="Edit" Click="ButtonModifier_Click"/>
+                                <Button x:Name="ButtonModifier" Content="Edit" Command="NavigationCommands.GoToPage" CommandParameter="/Pages/Entreprises/AjoutEntreprise.xaml"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Supprimer">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="ButtonSupprimer" Content="Supprimer" Click="ButtonSupprimer_Click" Tag="{Binding Id_Entreprise}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
