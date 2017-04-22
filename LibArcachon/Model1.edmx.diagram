@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf34022bf44e4d8ea12afe81751fb96d" Name="Diagram1">
+      <Diagram DiagramId="bf34022bf44e4d8ea12afe81751fb96d" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="ProjetArcachonModel.Course" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Entreprise" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Epreuve" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />

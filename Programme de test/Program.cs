@@ -12,7 +12,7 @@ namespace Programme_de_test
         static void Main(string[] args)
         {
 
-            
+            LibArcachon.TypeDeClasse lol = new TypeDeClasse { Nom = "Caravelle" };
             
                
 

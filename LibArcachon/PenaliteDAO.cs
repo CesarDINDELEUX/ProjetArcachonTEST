@@ -51,10 +51,6 @@ namespace LibArcachon
         public static string Add(VoilierInscrit voilierinscrit, int idpenalite)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
-            
-            
-
-
             db.SaveChanges();
             return "Ajout de la pénalité effectué";
         }

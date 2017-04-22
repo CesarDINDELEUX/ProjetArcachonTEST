@@ -95,11 +95,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Classements\AjoutPenalite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Classements\ClassementEpreuve.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Classements\Penalite.xaml">
+    <Page Include="Pages\Classements\Listedespenalites.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,11 +118,14 @@
     <Compile Include="Pages\Classement1.xaml.cs">
       <DependentUpon>Classement1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Classements\AjoutPenalite.xaml.cs">
+      <DependentUpon>AjoutPenalite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Classements\ClassementEpreuve.xaml.cs">
       <DependentUpon>ClassementEpreuve.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Classements\Penalite.xaml.cs">
-      <DependentUpon>Penalite.xaml</DependentUpon>
+    <Compile Include="Pages\Classements\Listedespenalites.xaml.cs">
+      <DependentUpon>Listedespenalites.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\GestionEntreprise.xaml.cs">
       <DependentUpon>GestionEntreprise.xaml</DependentUpon>
