@@ -34,7 +34,7 @@ namespace LibArcachon
         public virtual DbSet<Personne> Personne { get; set; }
         public virtual DbSet<Sponsoring> Sponsoring { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Temps> Temps { get; set; }
+        public virtual DbSet<Tps> Tps { get; set; }
         public virtual DbSet<TypeDeClasse> TypeDeClasse { get; set; }
         public virtual DbSet<Voilier> Voilier { get; set; }
         public virtual DbSet<VoilierInscrit> VoilierInscrit { get; set; }

@@ -16,7 +16,7 @@ namespace LibArcachon
     {
         public int Id_Penalite { get; set; }
         public int VoilierInscrit { get; set; }
-        public int idepreuve { get; set; }
+        public Nullable<int> idepreuve { get; set; }
         public string Latitude { get; set; }
         public string Logitude { get; set; }
         public System.TimeSpan Duree { get; set; }

@@ -14,14 +14,13 @@
         <Label x:Name="LabelCourses" Content="Choix de la course :" Margin="27,63,394.8,240.2"/>
         <ComboBox x:Name="ComboBoxCourse" Margin="143,66,279.8,240.2" SelectionChanged="ComboBoxCourse_SelectionChanged" DisplayMemberPath="Nom"/>
         <Label x:Name="LabelEpreuve" Content="Choix de l'épreuve :" Margin="271,66,150.8,237.2"/>
-        <ComboBox x:Name="ComboBoxEpreuve" Margin="387,66,27.8,237.2" DisplayMemberPath="Point_Depart"/>
-        <ListView x:Name="ListViewEpreuve" BorderBrush="Black" BorderThickness="1" Margin="64,109,55.8,25.2">
+        <ComboBox x:Name="ComboBoxEpreuve" Margin="387,66,27.8,237.2" DisplayMemberPath="Point_Depart" SelectionChanged="ComboBoxEpreuve_SelectionChanged"/>
+        <ListView x:Name="ListViewEpreuve" BorderBrush="Black" BorderThickness="1" Margin="64,109,27.5,25">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Rang"/>
-                    <GridViewColumn Header="Nom du bateau"/>
-                    <GridViewColumn Header="Temps"/>
-                    <GridViewColumn Header="Nombre de pénalités"/>
+                    <GridViewColumn Header="Nom du bateau" DisplayMemberBinding="{Binding Path=IDvoilierinscrit}"/>
+                    <GridViewColumn Header="Temps" DisplayMemberBinding="{Binding Path=TempsTotal}"/>
+                    <GridViewColumn Header="Temps de pénalités" DisplayMemberBinding="{Binding Path=dureePenalite}"/>
                     <GridViewColumn Header="Pénalité">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>

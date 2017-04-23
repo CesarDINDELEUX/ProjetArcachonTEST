@@ -19,8 +19,7 @@
                     <GridViewColumn Header="Point de départ" DisplayMemberBinding="{Binding Point_Depart}"/>
                     <GridViewColumn Header="Point d'arriver" DisplayMemberBinding="{Binding Point_Arrive}"/>
                     <GridViewColumn Header="Heure de départ" DisplayMemberBinding="{Binding Heure_Depart, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}"/>
-                    <GridViewColumn Header="Heure d'arriver théorique" 
-                                    DisplayMemberBinding="{Binding Heure_Arrive_theorique, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}"/>
+                    <GridViewColumn Header="Heure d'arriver théorique" DisplayMemberBinding="{Binding Heure_Arrive_theorique, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}"/>
                 </GridView>
             </ListView.View>
         </ListView>

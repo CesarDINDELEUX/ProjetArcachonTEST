@@ -113,6 +113,25 @@ namespace LibArcachon
             return listEpreuveParCourse;
         }
 
+     /*  public static List<string> getClassement()
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            var resultat = from vi in db.VoilierInscrit
+                           join co in db.Course on vi.idCourse equals co.Id_Course
+                           join ep in db.Epreuve on co.Id_Course equals ep.idcourse
+                           join tp in db.Tps on ep.Id_Epreuve equals tp.IDepreuve
+                           where ep.Id_Epreuve == 3 && tp.IDvoilierInscrit == vi.Id_VoilierInscrit
+                           orderby tp.Temps
+
+                         select new { temps = tp.Temps,  NumeroSerie = vi.NumeroSerie};
+
+           
+
+
+         
+            
+       }*/
+
 
 
     }

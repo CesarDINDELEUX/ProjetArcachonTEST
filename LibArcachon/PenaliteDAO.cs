@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibArcachon
 {
-    class PenaliteDAO
+    public class PenaliteDAO
     {
 
         public static List<Penalite> ListAll()
@@ -48,11 +48,29 @@ namespace LibArcachon
             return Retour;
         }
 
-        public static string Add(VoilierInscrit voilierinscrit, int idpenalite)
+        public static void Add(Penalite penalite)
         {
             ProjetArcachonEntities db = new ProjetArcachonEntities();
+            db.Penalite.Add(penalite);
             db.SaveChanges();
-            return "Ajout de la pénalité effectué";
+        }
+
+        public static TimeSpan? PenalParVoilier(string idvoilier, int id_Epreuve)
+        {
+            ProjetArcachonEntities db = new ProjetArcachonEntities();
+            TimeSpan? tpsTotal = TimeSpan.Parse("00:00:00");
+            var kek = from pen in db.Penalite
+                      from vi in db.VoilierInscrit.Where(x => pen.VoilierInscrit == x.Id_VoilierInscrit)
+                      from ep in db.Epreuve.Where(x => pen.idepreuve == x.Id_Epreuve)
+                      where ep.Id_Epreuve == id_Epreuve && vi.NumeroSerie == idvoilier
+                      select pen;
+
+
+            foreach (var item in kek)
+            {
+                tpsTotal = tpsTotal+item.Duree;
+            }
+            return tpsTotal;
         }
 
       

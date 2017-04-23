@@ -8,7 +8,7 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer Margin="-10,0,9.5,0.5">
             <StackPanel MinWidth="200">
-                <TextBlock Text="Ajout pénalités" Style="{StaticResource Heading2}" />
+                <TextBlock Style="{StaticResource Heading2}" ><Run Text="Ajout pénalités"/></TextBlock>
             </StackPanel>
         </ScrollViewer>
         <Label x:Name="LabelCourse" Content="Nom de la course :" Margin="50,34,273.5,263.5"/>
@@ -27,6 +27,7 @@
                   DisplayMemberPath="Nom">
         </ComboBox>
         <Label x:Name="label3" Content="Type d' erreur :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,91,0,0"/>
-        <Label x:Name="label4" Content="Durée de la pénalité :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,178,0,0"/>
+        <Label x:Name="label4" Content="Durée de la pénalité :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,194,0,0"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="190,194,0,0"/>
     </Grid>
 </UserControl>

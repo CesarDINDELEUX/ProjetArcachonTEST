@@ -24,7 +24,8 @@ namespace ModernUINavigationApp1.Pages.Classement
         {
             InitializeComponent();
             ComboBoxCourse.ItemsSource = LibArcachon.CourseDAO.List();
-        }
+            
+    }
 
         private void ComboBoxCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -37,6 +38,11 @@ namespace ModernUINavigationApp1.Pages.Classement
         private void ButtonPenalite_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+        private void ComboBoxEpreuve_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listeclassement = LibArcachon.ClassementEpreuve.classementEpreuve((ComboBoxEpreuve.SelectedItem as LibArcachon.Epreuve).Id_Epreuve);
+            ListViewEpreuve.ItemsSource = listeclassement;
         }
     }
 }

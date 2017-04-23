@@ -29,7 +29,11 @@ namespace ModernUINavigationApp1.Pages.Classements
 
         private void ButtonValider_Click(object sender, RoutedEventArgs e)
         {
-            LibArcachon.Penalite = new LibArcachon.Penalite {ListePenalite = (ComboPenalite.SelectedItem as LibArcachon.ListePenalite), Latitude = textBox.Text, Logitude = textBox1.Text, VoilierInscrit1 = ComboBateau.SelectedItem as LibArcachon.VoilierInscrit, Duree = }
+            LibArcachon.VoilierInscrit voilier = ComboBateau.SelectedItem as LibArcachon.VoilierInscrit;
+            LibArcachon.ListePenalite lp = ComboPenalite.SelectedItem as LibArcachon.ListePenalite;
+            LibArcachon.
+           LibArcachon.Penalite penalite = new LibArcachon.Penalite { ListePenalite = (ComboPenalite.SelectedItem as LibArcachon.ListePenalite), Latitude = textBox.Text, Logitude = textBox1.Text, VoilierInscrit1 = ComboBateau.SelectedItem as LibArcachon.VoilierInscrit, Duree = TimeSpan.Parse(textBox2.Text)};
+           LibArcachon.PenaliteDAO.Add(penalite);
         }
         
         private void ComboCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -30,7 +30,10 @@ namespace ModernUINavigationApp1.Pages.LesCoursesetEpreuves
 
         private void ComboBoxCourse_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListViewClassement.ItemsSource = LibArcachon.CourseDAO.GetVoiliersInscrit((ComboBoxCourse.SelectedItem as LibArcachon.Course).Id_Course);
+            List<LibArcachon.VoilierInscrit> lol;
+            lol = LibArcachon.CourseDAO.GetVoiliersInscrit((ComboBoxCourse.SelectedItem as LibArcachon.Course).Id_Course);
+            ListViewClassement.ItemsSource = lol;
+            
         }
     }
 }

@@ -17,7 +17,7 @@ namespace LibArcachon
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Epreuve()
         {
-            this.Temps = new HashSet<Temps>();
+            this.Tps = new HashSet<Tps>();
         }
     
         public int Id_Epreuve { get; set; }
@@ -29,6 +29,6 @@ namespace LibArcachon
     
         public virtual Course Course { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Temps> Temps { get; set; }
+        public virtual ICollection<Tps> Tps { get; set; }
     }
 }

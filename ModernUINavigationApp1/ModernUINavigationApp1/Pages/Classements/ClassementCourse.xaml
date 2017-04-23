@@ -16,10 +16,10 @@
         <ListView x:Name="ListViewClassement" Background="{x:Null}" BorderBrush="Black" BorderThickness="1" Margin="65,80,93.2,37.4">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Rang" />
+                    <GridViewColumn Header="Rang" DisplayMemberBinding="{Binding Path=NumeroSerie}"/>
                     <GridViewColumn Header="Nom du bateau" DisplayMemberBinding="{Binding Path=Voilier.Nom}"/>
                     <GridViewColumn Header="Temps" DisplayMemberBinding="{Binding Path=Temps.Temps}"/>
-                    <GridViewColumn Header="Pénalités"/>
+                    <GridViewColumn Header="Pénalités" DisplayMemberBinding="{Binding Path=Penalite}"/>
                 </GridView>
             </ListView.View>
         </ListView>

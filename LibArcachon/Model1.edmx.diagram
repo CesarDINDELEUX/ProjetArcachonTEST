@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf34022bf44e4d8ea12afe81751fb96d" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="ProjetArcachonModel.Course" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+      <Diagram DiagramId="ad628dd54bed4fc99c3ddab1b22781f6" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjetArcachonModel.Course" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Entreprise" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Epreuve" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.ListePenalite" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
@@ -14,21 +14,21 @@
         <EntityTypeShape EntityType="ProjetArcachonModel.Personne" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Sponsoring" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjetArcachonModel.Temps" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetArcachonModel.Tps" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.TypeDeClasse" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.Voilier" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProjetArcachonModel.VoilierInscrit" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Epreuve_Course" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_VoilierInscrit_Course" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Sponsoring_Entreprise" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjetArcachonModel.FK_Temps_Epreuve" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetArcachonModel.FK_Tps_Epreuve" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Penalite_ListePenalite" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Penalite_VoilierInscrit" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_VoilierInscrit_Barreur" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_VoilierInscrit_Equipier1" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_VoilierInscrit_Equipier2" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Sponsoring_VoilierInscrit" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjetArcachonModel.FK_Temps_VoilierInscrit" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetArcachonModel.FK_Tps_VoilierInscrit" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_Voilier_TypeDeClasse" ManuallyRouted="false" />
         <AssociationConnector Association="ProjetArcachonModel.FK_VoilierInscrit_Voilier" ManuallyRouted="false" />
       </Diagram>

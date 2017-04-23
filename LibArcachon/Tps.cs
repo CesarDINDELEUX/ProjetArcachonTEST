@@ -12,12 +12,12 @@ namespace LibArcachon
     using System;
     using System.Collections.Generic;
     
-    public partial class Temps
+    public partial class Tps
     {
-        public int idTemps { get; set; }
-        public System.DateTime Temps1 { get; set; }
-        public int idVoilierInscrit { get; set; }
-        public int idEpreuve { get; set; }
+        public int ID_TEMPS { get; set; }
+        public int IDepreuve { get; set; }
+        public int IDvoilierInscrit { get; set; }
+        public Nullable<System.TimeSpan> Temps { get; set; }
     
         public virtual Epreuve Epreuve { get; set; }
         public virtual VoilierInscrit VoilierInscrit { get; set; }
